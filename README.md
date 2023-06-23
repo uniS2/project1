@@ -2,30 +2,7 @@
 
 ## 🦁 멋쟁이사자처럼 FE 6기, HTML / CSS 프로젝트(1조: 1희1비)
 
-프로젝트 간단 설명
-
-## 웹 표준 마크업 & 스타일링
-
-- 적절한 헤딩 사용 및 시맨틱 마크업에 신경써 주세요.
-  예 - 버튼 기능을 하는 UI를 마크업 할 때 <div> 등 가급적 의미없는 요소를 사용하지 마세요.
-  다만 <div> 요소를 사용하지 말라는 의미가 아닙니다.
-- 유효성 검증을 통해 문법 오류가 발생하지 않도록 구현해야 합니다.
-- 페이지 단위로 구현해주세요. (컴포넌트 단위 구현은 React 프로젝트에서 진행됩니다.)
-- 스타일 작성 시, CSS를 사용하거나 [Sass](https://sass-lang.com/) 등 프리프로세서 기술 중 자유롭게 선태학여 사용하시면 됩니다.
-- 네이밍 컨벤션은 [BEM](https://getbem.com/) 방식을 사용해 주세요. (선택사항)
-
----
-
-## 웹 접근성
-
-- 이미지의 경우, 대체 텍스트 제공이 필요합니다.
-- 마우스로 조작할 수 있는 기능은 키보드로도 접근 및 조작이 가능해야 합니다.
-- 폼 컨트롤은 식별 가능한 레이블이 필요합니다.
-  (시각적으로 표현되지 않더라도 스크린 리더가 읽을 수 있게 처리해야 합니다)
-- 명도대비는 최소 4.5대 1을 준수해야 합니다. (`24px`, `18px Bold`인 경우, 최소 3대 1까지 허용 → [참고](https://www.w3.org/TR/WCAG22/#contrast-minimum))
-- 좀 더 상세한 웹접근성 가이드 라인 및 [체크리스트](https://www.notion.so/32d50962016c4c90a04c8447298434fc?pvs=21)는 사람인에서 공개한 정보를 참고해 주세요.
-
-[소개 | 사람인 웹 접근성 교육](https://saramin.github.io/a11y)
+마켓컬리를 기반으로 작성된 '마켓칼리' 피그마 시안을 참고하여 만든 HTML + CSS 프로젝트입니다.
 
 ## 🗓️ 프로젝트 기간 및 팀원 👨🏻‍💻 👩‍💻
 
@@ -48,30 +25,84 @@
 ## ⛳️ 역할 담당
 
 <details>
-    <summary>김봉석</summary>
+    <summary>🧐 김봉석</summary>
     <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * 로그인 & 회원가입기능, 상세페이지, 리뷰CR(UD) 
+        * 이벤트 + 배너 + 사이드바 섹션
   </details>
 <details>
-    <summary>노치현</summary>
+    <summary>🤓 노치현</summary>
     <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * 메인 & 장바구니 & 검색 페이지, 장바구니CRUD
+        * 공통 내비게이션 +
   </details>
 <details>
-    <summary>이준석</summary>
+    <summary>😎 이준석</summary>
     <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * 메인 & 장바구니 & 검색 페이지, 장바구니CRUD
+        * 공통 헤더 +
   </details>
   <details>
-    <summary>정소이</summary>
+    <summary>😃 정소이</summary>
     <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * 메인 & 장바구니 & 검색 페이지, 장바구니CRUD
+        * 상품 섹션
   </details>
-
-## 📜 페이지 설명
 
 ### ✏️ 네이밍 컨벤션
 
-### 🚫 웹 접근성
+- BEM 패턴
+  - 자식요소: \_\_ => event\_\_title
+  - 상태: -- => button--active
+
+### 🚫 웹 접근성(공통)
+
+- 마크업
+
+  - img 태그에 alt(대체 텍스트) 부여
+
+  - form 태그 내 label 필요(a11yHidden 처리)
+
+  - section/div 내 heading이 없어도 heading 부여(a11yHidden 처리)
+
+  - push 전 validator 확인(유효성 검증)
+
+  - a태그 내 target=”\_blank”지정시 rel=”noreferrer noopener” 속성 부여
+
+### 🌈 믹스인(공통)
 
 ### ✨ SEO
+
+## 📜 페이지(섹션) 설명
+
+![마켓칼리HTML구조](/src/kurlyHtml.png)
+
+### 메인 페이지
+
+#### Header
+
+- 마크업
+- CSS
+
+#### Nav
+
+- 마크업
+- CSS
+
+#### Section(event)
+
+- 마크업
+- CSS
+
+#### Section(goods1+ goods2)
+
+- 마크업
+- CSS
+
+#### Section(banner + side)
+
+- 마크업
+- CSS
+
+### Footer
+
+- 마크업
+- CSS
+
+## ⭐️ 결과물
