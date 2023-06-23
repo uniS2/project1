@@ -1,35 +1,186 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>마켓칼리 1조</title>
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css"
-    />
-    <link rel="stylesheet" href="/style/index.css" />
-  </head>
-  <body>
-    <!-- 공통 헤더 -->
-    <header></header>
-    <!-- 공통 내비게이션 -->
-    <nav></nav>
-    <main>
-      <!-- 메인 이벤트 섹션 -->
-      <section class="event"></section>
-      <!-- 상품1 섹션 -->
-      <section class="goods1"></section>
-      <!-- 배너 -->
-      <section class="banner"></section>
-      <!-- 상품2 섹션 -->
-      <section class="goods2"></section>
-      <!-- 사이드바 -->
-      <aside class="side"></aside>
-    </main>
-    <!-- 공통 푸터 -->
-    <footer></footer>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마켓칼리 1조</title>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css" />
+  <link rel="stylesheet" href="/style/index.css" />
+</head>
+
+<body>
+  <!-- 공통 헤더 -->
+  <header></header>
+  <!-- 공통 내비게이션 -->
+  <nav></nav>
+  <main>
+    <!-- 메인 이벤트 섹션 -->
+    <section class="event"></section>
+    <!-- 상품1 섹션 -->
+    <section class="goods1">
+      <!-- 상품1 제목 -->
+      <h2 class="goods__title">이 상품 어때요?</h2>
+      <!-- 상품1 목록 -->
+      <div class="goods__list">
+        <!-- 첫번째 요소 -->
+        <div class="goods__list1">
+          <a href="/" class="goods__link1" title="[풀무원] 탱탱쫄면 (4개입) 상세페이지">
+            <dl class="goods__item goods__regular">
+              <dt class="goods__subTitle a11yHidden">상품명</dt>
+              <dd class="goods__name">
+                <span aria-hidden="true">[</span>풀무원<span aria-hidden="true">]</span>
+                탱탱쫄면 (4개입)
+              </dd>
+              <dd class="goods__thumbnail"><img src="./assets/image/goods1.svg" alt="." aria-hidden="true" /></dd>
+              <dt class="goods__regTitle a11yHidden">정상가</dt>
+              <dd class="goods__regPrice"><ins>4,980 원</ins>
+              </dd>
+            </dl>
+          </a>
+          <button type="button" class="button__cart"><img src="./assets/icons/Cart.svg" alt="장바구니" /></button>
+        </div>
+        <!-- 두번째 요소 -->
+        <div class="goods__list2">
+          <a href="/" class="goods__link2" title="[온더바디] 죠르디 시카 자석 선쿠션 상세페이지">
+            <dl class="goods__item goods__regular">
+              <dt class="goods__subTitle a11yHidden">상품명</dt>
+              <dd class="goods__name">
+                <span aria-hidden="true">[</span>온더바디<span aria-hidden="true">]</span>
+                죠르디 시카 자석 선쿠션
+              </dd>
+              <dd class="goods__thumbnail"><img src="./assets/image/goods2.svg" alt="." aria-hidden="true" /></dd>
+              <dt class="goods__regTitle a11yHidden">정상가</dt>
+              <dd class="goods__regPrice"><ins>32,500 원</ins>
+              </dd>
+            </dl>
+          </a>
+          <button type="button" class="button__cart"><img src="./assets/icons/Cart.svg" alt="장바구니" /></button>
+        </div>
+        <!-- 세번째 요소 -->
+        <div class="goods__list3">
+          <a href="/" class="goods__link3" title="유기농 밀키퀸 현미 4kg 상세페이지">
+            <dl class="goods__item goods__regular">
+              <dt class="goods__subTitle a11yHidden">상품명</dt>
+              <dd class="goods__name">유기농 밀키퀸 현미 4kg</dd>
+              <dd class="goods__thumbnail"><img src="./assets/image/goods3.svg" alt="." aria-hidden="true" /></dd>
+              <dt class="goods__regTitle a11yHidden">정상가</dt>
+              <dd class="goods__regPrice"><ins>25,000 원</ins>
+            </dl>
+          </a>
+          <button type="button" class="button__cart"><img src="./assets/icons/Cart.svg" alt="장바구니" /></button>
+        </div>
+        <!-- 네번째 요소 -->
+        <div class="goods__list4">
+          <a href="/" class="goods__link4" title="[프로쉬] 베이비 세탁세">
+            <dl class="goods__item goods__discount">
+              <dt class="goods__subTitle a11yHidden">상품명</dt>
+              <dd class="goods__name">
+                <span aria-hidden="true">[</span>프로쉬<span aria-hidden="true">]</span>
+                베이비 세탁세
+              </dd>
+              <dd class="goods__thumbnail"><img src="./assets/image/goods4.svg" alt="." aria-hidden="true" /></dd>
+              <dt class="goods__regTitle a11yHidden">정상가</dt>
+              <dd class="goods__regPrice"><del>24,000 원</del>
+              <dt class="goods__disTitle a11yHidden">할인가</dt>
+              <dd class="goods__disPrice">
+                <span class="goods__disRate accentRate">24%</span>
+                <ins>18,900 원</ins>
+              </dd>
+            </dl>
+          </a>
+          <button type="button" class="button__cart"><img src="./assets/icons/Cart.svg" alt="장바구니" /></button>
+        </div>
+      </div>
+      <!-- 슬라이드 버튼 -->
+      <button type="button" class="button__next">&gt;</button>
+    </section>
+    <!-- 배너 -->
+    <section class="banner"></section>
+    <!-- 상품2 섹션 -->
+    <section class="goods2">
+      <!-- 상품2 제목 -->
+      <h2 class="goods__title">이 상품 어때요?</h2>
+      <!-- 상품2 목록 -->
+      <div class="goods__list">
+        <!-- 첫번째 요소 -->
+        <div class="goods__list1">
+          <a href="/" class="goods__link1"  title="[풀무원] 탱탱쫄면 (4개입) 상세페이지">
+            <dl class="goods__item goods__regular">
+              <dt class="goods__subTitle a11yHidden">상품명</dt>
+              <dd class="goods__name">
+                <span aria-hidden="true">[</span>풀무원<span aria-hidden="true">]</span>
+                탱탱쫄면 (4개입)
+              </dd>
+              <dd class="goods__thumbnail"><img src="./assets/image/goods1.svg" alt="." aria-hidden="true" /></dd>
+              <dt class="goods__regTitle a11yHidden">정상가</dt>
+              <dd class="goods__regPrice"><ins>4,980 원</ins>
+              </dd>
+            </dl>
+          </a>
+          <button type="button" class="button__cart"><img src="./assets/icons/Cart.svg" alt="장바구니" /></button>
+        </div>
+        <!-- 두번째 요소 -->
+        <div class="goods__list2">
+          <a href="/" class="goods__link2" title="[온더바디] 죠르디 시카 자석 선쿠션 상세페이지">
+            <dl class="goods__item goods__regular">
+              <dt class="goods__subTitle a11yHidden">상품명</dt>
+              <dd class="goods__name">
+                <span aria-hidden="true">[</span>온더바디<span aria-hidden="true">]</span>
+                죠르디 시카 자석 선쿠션
+              </dd>
+              <dd class="goods__thumbnail"><img src="./assets/image/goods2.svg" alt="." aria-hidden="true" /></dd>
+              <dt class="goods__regTitle a11yHidden">정상가</dt>
+              <dd class="goods__regPrice"><ins>32,500 원</ins>
+              </dd>
+            </dl>
+          </a>
+          <button type="button" class="button__cart"><img src="./assets/icons/Cart.svg" alt="장바구니" /></button>
+        </div>
+        <!-- 세번째 요소 -->
+        <div class="goods__list3">
+          <a href="/" class="goods__link3"  title="유기농 밀키퀸 현미 4kg 상세페이지">
+            <dl class="goods__item goods__regular">
+              <dt class="goods__subTitle a11yHidden">상품명</dt>
+              <dd class="goods__name">유기농 밀키퀸 현미 4kg</dd>
+              <dd class="goods__thumbnail"><img src="./assets/image/goods3.svg" alt="." aria-hidden="true" /></dd>
+              <dt class="goods__regTitle a11yHidden">정상가</dt>
+              <dd class="goods__regPrice"><ins>25,000 원</ins>
+            </dl>
+          </a>
+          <button type="button" class="button__cart"><img src="./assets/icons/Cart.svg" alt="장바구니" /></button>
+        </div>
+        <!-- 네번째 요소 -->
+        <div class="goods__list4">
+          <a href="/" class="goods__link4" title="[프로쉬] 베이비 세탁세">
+            <dl class="goods__item goods__discount">
+              <dt class="goods__subTitle a11yHidden">상품명</dt>
+              <dd class="goods__name">
+                <span aria-hidden="true">[</span>프로쉬<span aria-hidden="true">]</span>
+                베이비 세탁세
+              </dd>
+              <dd class="goods__thumbnail"><img src="./assets/image/goods4.svg" alt="." aria-hidden="true" /></dd>
+              <dt class="goods__regTitle a11yHidden">정상가</dt>
+              <dd class="goods__regPrice"><del>24,000 원</del>
+              <dt class="goods__disTitle a11yHidden">할인가</dt>
+              <dd class="goods__disPrice">
+                <span class="goods__disRate accentRate">24%</span>
+                <ins>18,900 원</ins>
+              </dd>
+            </dl>
+          </a>
+          <button type="button" class="button__cart"><img src="./assets/icons/Cart.svg" alt="장바구니" /></button>
+        </div>
+      </div>
+      <!-- 슬라이드 버튼 -->
+      <button type="button" class="button__next">&gt;</button>
+    </section>
+    <!-- 사이드바 -->
+    <aside class="side"></aside>
+  </main>
+  <!-- 공통 푸터 -->
+  <footer></footer>
+</body>
+
 </html>
