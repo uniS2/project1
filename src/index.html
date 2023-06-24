@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,13 +10,103 @@
 </head>
 
 <body>
-  <!-- 공통 헤더 -->
-  <header></header>
+   <!-- 공통 헤더 -->
+    <header class="header">
+      <div class="header__group">
+        <div class="header__group__tab">
+          <h1 class="group__logo">
+            <img
+              class="group__logo_img"
+              src="/src/assets/icons/Group.svg"
+              alt="마켓칼리 로고"
+            />
+          </h1>
+          <ul class="group__itemBox">
+            <li class="grop__itemBox__item">
+              <a class="itemBox__link" href="/">마켓칼리</a>
+            </li>
+            <li class="grop__itemBox__item">
+              <span class="itemBox__item__divider" aria-hidden="true">ㅣ</span
+              ><a class="itemBox__link" href="/">뷰티칼리</a>
+              <!-- 고객센터 옆 화살표는 li background로 처리 -->
+            </li>
+          </ul>
+        </div>
+        <form action="/" method="POST" class="header__group__searchForm">
+          <fieldset class="group__searchForm__fieldset">
+            <legend class="a11yHidden">검색 폼</legend>
+            <div class="searchForm__group">
+              <div class="searchForm__group__formInputBox">
+                <label for="search" class="a11yHidden">검색어</label>
+                <input
+                  type="search"
+                  id="search"
+                  name="search"
+                  required
+                  class="group__input"
+                  placeholder="검색어를 입력하세요."
+                />
+              </div>
+              <button type="submit" class="searchForm__group__button"></button>
+            </div>
+          </fieldset>
+        </form>
+        <ul class="header__group__myPage">
+          <li class="group__myPageLi">
+            <button
+              class="group__myPageLi__button"
+              type="button"
+              aria-label="배송지 등록"
+            ></button>
+          </li>
+          <li class="gorup__myPageLi">
+            <button
+              class="group__myPageLi__button"
+              type="button"
+              aria-label="찜하기"
+            ></button>
+          </li>
+          <li class="gorup__myPageLi">
+            <button
+              class="group__myPageLi__button"
+              type="button"
+              aria-label="장바구니"
+            ></button>
+          </li>
+        </ul>
+        <ul class="header__group__memberOnly">
+          <li class="group__memberOnlyLi"><a href="/">회원가입</a></li>
+          <li class="group__memberOnlyLi">
+            <span class="group__memberOnlyLi__divider" aria-hidden="true"
+              >ㅣ</span
+            >
+            <a href="/">로그인</a>
+          </li>
+          <li class="group__memberOnlyLi">
+            <span class="group__memberOnlyLi__divider" aria-hidden="true"
+              >ㅣ</span
+            ><a href="/">고객센터</a>
+            <!-- 고객센터 옆 화살표는 li background로 처리 -->
+          </li>
+        </ul>
+      </div>
+    </header>
   <!-- 공통 내비게이션 -->
   <nav></nav>
   <main>
-    <!-- 메인 이벤트 섹션 -->
-    <section class="event"></section>
+   <!-- 메인 이벤트 섹션 -->
+      <section class="event">
+        <h2 class="event__title a11yHidden">메인 이벤트</h2>
+          <a href="/"><img src="/src/assets/image/banner04.svg" alt="컬리 이 주의 특가 한 눈에 보기" ></a>
+
+          <button type="button" class="button__left" aria-label="왼쪽 이벤트 페이지로 이동" >
+          <img src="/src/assets/icons/Arrow.svg" alt="왼쪽 이동 화살표">
+          </button>
+   
+          <button type="button" class="button__right" aria-label="오른쪽 이벤트 페이지로 이동" >
+          <img src="/src/assets/icons/Arrow.svg" alt="오른쪽 이동 화살표">
+          </button>
+        </section>
     <!-- 상품1 섹션 -->
     <section class="goodsUp">
       <!-- 상품1 제목 -->
@@ -103,8 +192,11 @@
       <!-- 슬라이드 버튼 -->
       <button type="button" class="button__next" aria-label="다음 상품 보여주기"></button>
     </section>
-    <!-- 배너 -->
-    <section class="banner"></section>
+     <!-- 배너 -->
+      <section class="banner">
+        <h2 class="banner__title a11yHidden">10월 주간 이벤트</h2>
+        <a href="/"><img src="/src/assets/image/banner03.svg" alt="컬리 퍼플위크 안내 적립률up+3종 쿠폰팩, 더 풍성해진 혜택 10월24일 부터 10월28일 까지" ></a>
+      </section>
     <!-- 상품2 섹션 -->
     <section class="goodsDown">
       <!-- 상품2 제목 -->
@@ -183,11 +275,43 @@
       <!-- 슬라이드 버튼 -->
       <button type="button" class="button__next" aria-label="다음 상품 보여주기"></button>
     </section>
-    <!-- 사이드바 -->
-    <aside class="side"></aside>
+     <!-- 사이드바 -->
+      <aside class="side">
+        <h2 class="side__title a11yHidden">사이드바</h2>
+        <div class="side__container">
+          <button type="button" class="button__top" aria-label="위쪽항목으로 이동">
+            <img src="/src/assets/icons/Arrow.svg" alt="위쪽 이동 화살표">
+          </button>
+          <span class="sidebar__title">
+            최근 본 상품
+          </span>
+          <ul>
+            <li>
+              <a href="/">
+              <img src="/src/assets/image/goods1.svg" alt="풀무원 탱탱쫄면(4개입)" >
+              </a>
+            </li>
+            <li>
+              <a href="/">
+              <img src="/src/assets/image/goods4.svg" alt="프로쉬 베이비 세탁세제" >
+              </a>
+            </li>
+            <li>
+              <a href="/">
+              <img src="/src/assets/image/goods2.svg" alt="온더바디 죠르디 시카 자석 선쿠션" >
+              </a>
+            </li>
+          </ul>
+          <button type="button" class="button__bottom" aria-label="아래항목으로 이동">
+            <img src="/src/assets/icons/Arrow.svg" alt="아래쪽 이동 화살표" >
+          </button>
+        </div>
+      </aside>
   </main>
   <!-- 공통 푸터 -->
   <footer></footer>
+  <div class="mention">
+      <span>지금 가입하고 인기상품 100원에 받아가세요!</span>
+    </div>
 </body>
-
 </html>
