@@ -88,7 +88,6 @@
 #### Section(event)
 
 - 마크업
-  event에 a태그를 사용해서 링크가 가능하게 event img를 넣었고 button태그로 왼쪽으로 이동하는데 사용할 버튼과 오른쪽으로 이동하는데 사용할 버튼 2개를 넣었습니다.
 - CSS
 
 #### Section(goods1+ goods2)
@@ -105,7 +104,6 @@
 #### Section(banner + side)
 
 - 마크업
-  banner에는 a태그를 사용해서 링크가 가능하게 banner img를 넣었고 접근성 관점에서 숨김 제목을 넣었습니다. sidebar는 ul태그를 사용해서 자식요소인 li태그에 img를 추가했습니다. button태그로 위쪽으로 이동하는데 사용할 버튼과 아래쪽으로 이동하는데 사용할 버튼 2개를 넣었습니다.
 - CSS
 
 ### Footer
