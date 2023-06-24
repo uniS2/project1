@@ -14,7 +14,69 @@
   </head>
   <body>
     <!-- 공통 헤더 -->
-    <header></header>
+    <header>
+      <div class="header__group">
+        <div class="tab">
+          <h1>
+            <img src="/src/assets/icons/Group.svg" alt="마켓칼리 로고" />
+          </h1>
+          <ul class="tab__item-box">
+            <li>
+              <a href="/">마켓칼리</a>
+            </li>
+            <li>
+              <span class="divider" aria-hidden="true">ㅣ</span
+              ><a href="/">뷰티칼리</a>
+              <!-- 고객센터 옆 화살표는 li background로 처리 -->
+            </li>
+          </ul>
+        </div>
+        <form action="/" method="POST" class="searchForm">
+          <fieldset>
+            <legend class="a11yHidden">검색 폼</legend>
+            <div class="searchForm__group">
+              <div class="formInput">
+                <label for="search" class="a11yHidden formInput__label"
+                  >검색어</label
+                >
+                <input
+                  type="search"
+                  id="search"
+                  name="search"
+                  required
+                  class="formInput__input"
+                  placeholder="검색어를 입력하세요."
+                />
+              </div>
+              <button type="submit" class="searchForm__button"></button>
+            </div>
+          </fieldset>
+        </form>
+        <ul class="mypage">
+          <li>
+            <button type="button" aria-label="배송지 등록"></button>
+          </li>
+          <li>
+            <button type="button" aria-label="찜하기"></button>
+          </li>
+          <li>
+            <button type="button" aria-label="장바구니"></button>
+          </li>
+        </ul>
+        <ul class="memberOnly">
+          <li><a href="/">회원가입</a></li>
+          <li>
+            <span class="divider" aria-hidden="true">ㅣ</span>
+            <a href="/">로그인</a>
+          </li>
+          <li>
+            <span class="divider" aria-hidden="true">ㅣ</span
+            ><a href="/">고객센터</a>
+            <!-- 고객센터 옆 화살표는 li background로 처리 -->
+          </li>
+        </ul>
+      </div>
+    </header>
     <!-- 공통 내비게이션 -->
     <nav></nav>
     <main>
@@ -31,5 +93,8 @@
     </main>
     <!-- 공통 푸터 -->
     <footer></footer>
+    <div class="mention">
+      <span>지금 가입하고 인기상품 100원에 받아가세요!</span>
+    </div>
   </body>
 </html>
