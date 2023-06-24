@@ -32,7 +32,7 @@
 <details>
     <summary>🤓 노치현</summary>
     <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * (조장) 공통 내비게이션 + README.md 작성
+        * (조장) 공통 내비게이션 + 공통 푸터 + 로그인 페이지 + README.md 작성
   </details>
 <details>
     <summary>😎 이준석</summary>
