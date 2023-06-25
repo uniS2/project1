@@ -1,8 +1,10 @@
-# 📂 MarketKurly
+# 📂 MarketKarly
 
 ## 🦁 멋쟁이사자처럼 FE 6기, HTML / CSS 프로젝트(1조: 1희1비)
 
-마켓컬리를 기반으로 작성된 '마켓칼리' 피그마 시안을 참고하여 만든 HTML + CSS 프로젝트입니다.
+
+'마켓칼리' 피그마 시안을 참고하여 만든 HTML + CSS 프로젝트입니다.
+
 
 ## 🗓️ 프로젝트 기간 및 팀원 👨🏻‍💻 👩‍💻
 
@@ -27,22 +29,25 @@
 <details>
     <summary>🧐 김봉석</summary>
     <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * 이벤트 + 배너 + 사이드바 섹션
+
+        * (조원) 이벤트 + 배너 + 사이드바 섹션
+
   </details>
 <details>
     <summary>🤓 노치현</summary>
     <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * 공통 내비게이션 +
+
+        * (조장) 공통 내비게이션 + 공통 푸터 + 로그인 페이지 + README.md 작성
   </details>
 <details>
     <summary>😎 이준석</summary>
     <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * 공통 헤더 +
+        * (조원) 공통 헤더 +
   </details>
   <details>
-    <summary>😃 정소이</summary>  
-  <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-        * 상품 섹션
+    <summary>😃 정소이</summary>
+    <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
+        * (조원) 상품 섹션
   </details>
 
 ### ✏️ 네이밍 컨벤션
