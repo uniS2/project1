@@ -1,12 +1,1 @@
-@use "sass:math";
-
-$rootUnit: 16px;
-
-@function removeUnit($value) {
-  // @return ($value / ($value * 0 + 1));
-  @return math.div($value, $value * 0 + 1);
-}
-
-@function rem($px, $base: $rootUnit) {
-  @return (removeUnit($px / $base)) * 1rem;
-}
+// util.scss
