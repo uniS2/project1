@@ -1,5 +1,7 @@
+@use "./../utils/unit" as *;
+
 // padding 관련 믹스인
-@mixin paddingY($paddingY: 0) {
+@mixin paddingY($paddingY) {
   padding-top: rem($paddingY);
   padding-bottom: rem($paddingY);
 }

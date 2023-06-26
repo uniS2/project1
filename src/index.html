@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>마켓칼리 1조</title>
-  <link rel="stylesheet" as="style" crossorigin
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css" />
-  <link rel="stylesheet" href="/style/index.css" />
-</head>
-<body>
-   <!-- 공통 헤더 -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마켓칼리 1조</title>
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css"
+    />
+    <link rel="stylesheet" href="/style/index.css" />
+  </head>
+  <body>
+    <!-- 공통 헤더 -->
     <header class="header">
-      <div class="header__group">
+      <div class="header__group clearfix">
         <div class="header__group__tab">
           <h1 class="group__logo">
             <img
               class="group__logo_img"
               src="/assets/icons/Logo.svg"
-
               alt="마켓칼리 로고"
             />
           </h1>
           <ul class="group__itemBox">
-
             <li class="group__itemBox__item">
-              <a class="itemBox__link" href="#">마켓칼리</a>
+              <a class="itemBox__link itemBox__link--active" href="#"
+                >마켓칼리</a
+              >
             </li>
             <li class="group__itemBox__item">
               <span class="itemBox__item__divider" aria-hidden="true">ㅣ</span
@@ -78,18 +81,23 @@
           </li>
         </ul>
         <ul class="header__group__memberOnly">
-          <li class="group__memberOnlyLi"><a href="#">회원가입</a></li>
           <li class="group__memberOnlyLi">
-            <span class="group__memberOnlyLi__divider" aria-hidden="true"
-              >ㅣ</span
+            <a
+              class="group__memberOnlyLi__link group__memberOnlyLi--active"
+              href="#"
+              >회원가입</a
             >
-            <a href="/login.html">로그인</a>
           </li>
           <li class="group__memberOnlyLi">
             <span class="group__memberOnlyLi__divider" aria-hidden="true"
               >ㅣ</span
-
-            ><a href="#">고객센터</a>
+            >
+            <a href="/login.html" class="group__memberOnlyLi__link">로그인</a>
+          </li>
+          <li class="group__memberOnlyLi">
+            <span class="group__memberOnlyLi__divider" aria-hidden="true"
+              >ㅣ</span
+            ><a href="#" class="group__memberOnlyLi__link">고객센터</a>
             <!-- 고객센터 옆 화살표는 li background로 처리 -->
           </li>
         </ul>
@@ -793,7 +801,12 @@
       </div>
     </footer>
     <div class="mention">
-      <span>지금 가입하고 인기상품 100원에 받아가세요!</span>
+      <div class="mention__box">
+        <span class="mention__box__text"
+          >지금 가입하고 인기상품 100원에 받아가세요!</span
+        >
+        <button class="mention__box__button"></button>
+      </div>
     </div>
   </body>
 </html>

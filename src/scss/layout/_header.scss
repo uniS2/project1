@@ -1,1 +1,167 @@
-// header.scss
+@use "./../utils" as *;
+
+//input search x 버튼 안보이게 하는 속성
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  display: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+
+.header {
+  margin-top: rem(42px);
+  padding-top: rem(67px);
+  padding-bottom: rem(13px);
+  width: 100%;
+  &__group {
+    width: rem(1050px);
+    @include autoMargin;
+    position: relative;
+  }
+}
+
+.header__group__tab {
+  display: flex;
+  align-items: center;
+  float: left;
+  .group__logo {
+    margin-right: rem(12px);
+  }
+  .group__itemBox {
+    display: flex;
+  }
+  .itemBox__link {
+    position: relative;
+    font-size: 1.333rem;
+    font-weight: 600;
+    color: #898989;
+  }
+  .group__itemBox__item:nth-of-type(2) .itemBox__link::after {
+    content: "";
+    display: inline-block;
+    background-image: url(../../assets/icons/new-1.svg);
+    background-repeat: no-repeat;
+    height: rem(7px);
+    width: rem(7px);
+    top: rem(-7px);
+    right: rem(-13px);
+    position: absolute;
+  }
+  .itemBox__link--active {
+    color: $primary-color;
+  }
+  .itemBox__item__divider {
+    display: inline-block;
+    color: #d9d9d9;
+    @include marginX(6.5px);
+  }
+}
+
+.header__group__searchForm {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  border-radius: rem(4px);
+  border: rem(1px) solid $primary-color;
+  @include paddingY(12px);
+  @include paddingX(20px);
+  .group__searchForm__fieldset {
+    width: rem(200px);
+    @include autoMargin;
+  }
+  .searchForm__group {
+    display: flex;
+    align-items: center;
+  }
+  .group__input {
+    border: 0;
+    font-size: 1.333rem;
+    color: #898989;
+    width: rem(324px);
+  }
+  .group__input:focus {
+    outline: none;
+  }
+  .searchForm__group__button {
+    border: 0;
+    background-image: url(./../../assets/icons/Search.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+    height: 36px;
+    width: 36px;
+  }
+}
+
+.header__group__myPage {
+  float: right;
+  display: flex;
+  .group__myPageLi button {
+    margin-left: rem(20px);
+    height: rem(36px);
+    width: rem(36px);
+    border: 0;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+  }
+  .group__myPageLi:first-child button {
+    background-image: url(../../assets/icons/Location.svg);
+  }
+  .group__myPageLi:nth-of-type(2) button {
+    background-image: url(../../assets/icons/Heart.svg);
+  }
+  .group__myPageLi:nth-of-type(3) button {
+    background-image: url(../../assets/icons/icon-cart.svg);
+  }
+}
+
+.header__group__memberOnly {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: rem(-55px);
+  font-size: rem(12.003px);
+  color: #333;
+  .group__memberOnlyLi__divider {
+    color: #d9d9d9;
+    @include marginX(6.805px);
+  }
+  .group__memberOnlyLi--active {
+    color: $primary-color;
+  }
+  .group__memberOnlyLi:nth-child(3) .group__memberOnlyLi__link {
+    padding-right: rem(12px);
+    box-sizing: border-box;
+    position: relative;
+  }
+  .group__memberOnlyLi:nth-child(3) .group__memberOnlyLi__link::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: rem(8px);
+    height: rem(5.6px);
+    background: url(./../../assets/icons/Icon_down\ 1.svg) no-repeat;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+}
