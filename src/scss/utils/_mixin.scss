@@ -1,3 +1,4 @@
+
 @use "./../utils/unit" as *;
 
 // padding 관련 믹스인
@@ -11,6 +12,13 @@
   padding-right: rem($paddingX);
 }
 
+@mixin padding($padding: 0) {
+  padding-left: $padding;
+  padding-right: $padding;
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
 // margin 관련 믹스인
 @mixin marginY($marginY: 0) {
   margin-top: rem($marginY);
@@ -22,11 +30,27 @@
   margin-right: rem($marginX);
 }
 
+@mixin margin($margin: 0) {
+  margin-left: $margin;
+  margin-right: $margin;
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+@mixin box($w: 0, $h: 0) {
+  width: rem($w);
+  height: rem($h);
+}
 @mixin autoMargin($marginX: auto) {
   margin-left: $marginX;
   margin-right: $marginX;
 }
 
+@mixin font($fs: 16px, $fw: 400, $lh: normal, $cl: black) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  color: $cl;
+}
 // Position 관련 믹스인
 @mixin po($po: relative) {
   position: $po;
