@@ -24,6 +24,7 @@ legend {
 
 /* 배너 섹션 */
 
+
 .banner {
   @include flexbox($justify: center);
   &__image {
@@ -112,37 +113,29 @@ legend {
   @include box(2.5rem, 3.21285rem);
 }
 
+
 .mention {
-  width: 100%;
+  @include pos($t: 0);
+  @include box($w: 100%);
   background: $primary-color;
-  position: absolute;
-  top: 0;
   &__box {
-    width: 1050px;
+    @include po;
+    @include box($w: rem(1050px));
     @include autoMargin;
-    position: relative;
   }
   &__box__text {
     display: block;
     @include autoMargin;
-    @include paddingY(11.5px);
+    @include paddingY(rem(11.5px));
+    @include font($fs: 1rem, $cl: $white);
     text-align: center;
-    color: $white;
-    font-size: 1rem;
   }
   &__box__button {
-    position: absolute;
-    right: 0;
-    border: 0;
-    background-color: transparent;
-    background-image: url(./../assets/icons/Close.svg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    @include buttonClear($url: "./../assets/icons/Close.svg");
+    @include pos($r: 0);
     top: 50%;
     transform: translateY(-50%);
-    height: 42px;
-    width: 42px;
-    cursor: pointer;
+    @include box(rem(42px), rem(42px));
   }
 }
 
