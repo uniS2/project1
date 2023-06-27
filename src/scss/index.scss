@@ -9,170 +9,142 @@ body {
   height: 100vh;
 }
 
-/* 배너 섹션 */
-.banner {
-  display: flex;
-  justify-content: center;
+/* 공통 부분 */
+
+.a11yHidden,
+legend {
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
-.banner__image {
-  max-width: 62.625rem;
-  padding: 40px 0px;
+/* 배너 섹션 */
+
+.banner {
+  @include flexbox($justify: center);
+  &__image {
+    max-width: 62.625rem;
+    @include paddingY(rem(40px));
+  }
 }
 
 /* 이벤트 섹션 */
+
 .event {
-  position: relative;
-  width: 120rem;
-  height: 23.125rem;
-}
+  @include po(relative);
+  @include box($w: 100vw);
+  &:hover .button__left,
+  &:hover .button__right {
+    display: block;
+    opacity: 1;
+  }
+  &__wrapper {
+    @include autoMargin;
+    @include box(120rem, 23.125rem);
+    @include flexbox($items: center);
+    .button__left {
+      @include pos(absolute, 0, rem(1100px), 0, 0);
+    }
 
-.event__image {
-  width: inherit;
-  height: inherit;
-}
+    .button__right {
+      @include pos(absolute, 0, 0, 0, rem(1100px));
+      transform: rotate(180deg);
+    }
 
-.button__left {
-  position: absolute;
-  top: 9.13rem;
-  right: 94.88rem;
-  bottom: 10.75rem;
-  left: 21.88rem;
-  border: none;
-  background: transparent;
+    .button__left,
+    .button__right {
+      border: none;
+      background: transparent;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+  }
+  &__image {
+    @include box($h: inherit);
+    display: block;
+    max-width: 100%;
+  }
 }
-
-.button__right {
-  position: absolute;
-  top: 9.13rem;
-  right: 21.88rem;
-  bottom: 10.75rem;
-  left: 94.87rem;
-  transform: rotate(180deg);
-  border: none;
-  background: transparent;
-}
-
-.button__left,
-.button__right {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.event:hover .button__left {
-  display: block;
-}
-
-.event:hover .button__right {
-  display: block;
-}
-
-.event:hover .button__left,
-.event:hover .button__right {
-  opacity: 1;
-}
-
-/* 트랜지션으로 버튼 사라지는 호버 속도 늦추기 */
 
 /* 사이드바 섹션 */
 
-ul {
-  list-style: none;
-  overflow: hidden;
+.sidebar {
+  @include po();
+  z-index: 2;
+  &__list {
+    list-style: none;
+    overflow: hidden;
+  }
+  &__title {
+    @include font(0.75rem, 600, 150%, black);
+    @include box(4.5rem, 1.125rem);
+    margin: 0.5rem;
+    text-align: center;
+  }
+  &__container {
+    @include box(5rem, 13.9375rem);
+    @include pos($pos: fixed, $t: 30%, $r: rem(39.04px));
+    @include flexbox($direction: column, $items: center);
+    border: 1px solid #c4c4c4;
+    padding: 0.5rem;
+    background: white;
+  }
 }
 
-.side {
-  position: relative;
+.button {
+  &__top,
+  &__bottom {
+    padding: 0;
+    border: none;
+    background: transparent;
+    @include box(1.125rem, 1.125rem);
+  }
+  &__bottom {
+    margin-top: 0.5rem;
+  }
 }
 
-.side__container {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #c4c4c4;
-  align-items: center;
-  top: 30%;
-  right: 2.44rem;
-  padding: 0.5rem;
-  width: 5rem;
-  height: 13.9375rem;
-  background: white;
+.li__image {
+  @include box(2.5rem, 3.21285rem);
 }
 
-.button__top {
-  width: 1.125rem;
-  height: 1.125rem;
-  border: none;
-  background: transparent;
-  padding: 0;
-}
-
-.button__bottom {
-  width: 1.125rem;
-  height: 1.125rem;
-  border: none;
-  background: transparent;
-  padding: 0;
-  margin-top: 0.5rem;
-}
-
-.sidebar__title {
-  font-size: 0.75rem;
-  line-height: 150%;
-  font-weight: 600;
-  color: black;
-  width: 4.5rem;
-  height: 1.125rem;
-  margin: 0.5rem;
-  text-align: center;
-}
-
-.li_image {
-  width: 2.5rem;
-  height: 3.21285rem;
-}
 
 .mention {
-  width: 100%;
+  @include pos($t: 0);
+  @include box($w: 100%);
   background: $primary-color;
   position: absolute;
   top: 0;
-
   &__box {
-    width: 1050px;
+    @include po;
+    @include box($w: rem(1050px));
     @include autoMargin;
-    position: relative;
   }
 
   &__box__text {
     display: block;
     @include autoMargin;
-    @include paddingY(11.5px);
+    @include paddingY(rem(11.5px));
+    @include font($fs: 1rem, $cl: $white);
     text-align: center;
-    color: $white;
-    font-size: 1rem;
   }
 
   &__box__button {
-    position: absolute;
-    right: 0;
-    border: 0;
-    background-color: transparent;
-    background-image: url(./../assets/icons/Close.svg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    @include buttonClear($url: "./../assets/icons/Close.svg");
+    @include pos($r: 0);
     top: 50%;
     transform: translateY(-50%);
-    height: 42px;
-    width: 42px;
-    cursor: pointer;
+    @include box(rem(42px), rem(42px));
   }
 }
 
 // 상품 섹션
 
 .goods {
-
   // 전체 배치
   &Up,
   &Down {
@@ -257,7 +229,6 @@ ul {
 }
 
 .goods {
-
   // 버튼 배치
   &__list {
     @include po();
