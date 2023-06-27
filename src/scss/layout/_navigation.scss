@@ -39,7 +39,6 @@
       filter: invert(13%) sepia(17%) saturate(7280%) hue-rotate(266deg)
         brightness(143%) contrast(145%);
     }
-
     &:hover &__text {
       @include font($fw: 700, $lh: 150%, $cl: $primary-color);
     }
@@ -81,7 +80,6 @@
       @include font($fs: rem(12px), $fw: 500);
     }
   }
-
   .category {
     &__link {
       @include font($cl: $content-color);

@@ -9,7 +9,9 @@ body {
   height: 100vh;
   @include font($cl: $content-color);
 }
+
 /* 공통 부분 */
+
 .a11yHidden,
 legend {
   overflow: hidden;
@@ -23,157 +25,120 @@ legend {
 
 /* 배너 섹션 */
 .banner {
-  display: flex;
-  justify-content: center;
-}
-
-.banner__image {
-  max-width: 62.625rem;
-  padding: 40px 0px;
+  @include flexbox($justify: center);
+  &__image {
+    max-width: 62.625rem;
+    @include paddingY(rem(40px));
+  }
 }
 
 /* 이벤트 섹션 */
+
 .event {
-  position: relative;
-  width: 120rem;
-  height: 23.125rem;
-}
+  @include po(relative);
+  @include box($w: 100vw);
+  &:hover .button__left,
+  &:hover .button__right {
+    display: block;
+    opacity: 1;
+  }
+  &__wrapper {
+    @include autoMargin;
+    @include box(120rem, 23.125rem);
+    @include flexbox($items: center);
+    .button__left {
+      @include pos(absolute, 0, rem(1100px), 0, 0);
+    }
 
-.event__image {
-  width: inherit;
-  height: inherit;
-}
+    .button__right {
+      @include pos(absolute, 0, 0, 0, rem(1100px));
+      transform: rotate(180deg);
+    }
 
-.button__left {
-  position: absolute;
-  top: 9.13rem;
-  right: 94.88rem;
-  bottom: 10.75rem;
-  left: 21.88rem;
-  border: none;
-  background: transparent;
+    .button__left,
+    .button__right {
+      border: none;
+      background: transparent;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+  }
+  &__image {
+    @include box($h: inherit);
+    display: block;
+    max-width: 100%;
+  }
 }
-
-.button__right {
-  position: absolute;
-  top: 9.13rem;
-  right: 21.88rem;
-  bottom: 10.75rem;
-  left: 94.87rem;
-  transform: rotate(180deg);
-  border: none;
-  background: transparent;
-}
-
-.button__left,
-.button__right {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.event:hover .button__left {
-  display: block;
-}
-
-.event:hover .button__right {
-  display: block;
-}
-
-.event:hover .button__left,
-.event:hover .button__right {
-  opacity: 1;
-}
-/* 트랜지션으로 버튼 사라지는 호버 속도 늦추기 */
 
 /* 사이드바 섹션 */
 
-ul {
-  list-style: none;
-  overflow: hidden;
+.sidebar {
+  @include po();
+  z-index: 2;
+  &__list {
+    list-style: none;
+    overflow: hidden;
+  }
+  &__title {
+    @include font(0.75rem, 600, 150%, black);
+    @include box(4.5rem, 1.125rem);
+    margin: 0.5rem;
+    text-align: center;
+  }
+  &__container {
+    @include box(5rem, 13.9375rem);
+    @include pos($pos: fixed, $t: 30%, $r: rem(39.04px));
+    @include flexbox($direction: column, $items: center);
+    border: 1px solid #c4c4c4;
+    padding: 0.5rem;
+    background: white;
+  }
 }
 
-.side {
-  position: relative;
+.button {
+  &__top,
+  &__bottom {
+    padding: 0;
+    border: none;
+    background: transparent;
+    @include box(1.125rem, 1.125rem);
+  }
+  &__bottom {
+    margin-top: 0.5rem;
+  }
 }
 
-.side__container {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #c4c4c4;
-  align-items: center;
-  top: 30%;
-  right: 2.44rem;
-  padding: 0.5rem;
-  width: 5rem;
-  height: 13.9375rem;
-  background: white;
+.li__image {
+  @include box(2.5rem, 3.21285rem);
 }
 
-.button__top {
-  width: 1.125rem;
-  height: 1.125rem;
-  border: none;
-  background: transparent;
-  padding: 0;
-}
-
-.button__bottom {
-  width: 1.125rem;
-  height: 1.125rem;
-  border: none;
-  background: transparent;
-  padding: 0;
-  margin-top: 0.5rem;
-}
-
-.sidebar__title {
-  font-size: 0.75rem;
-  line-height: 150%;
-  font-weight: 600;
-  color: black;
-  width: 4.5rem;
-  height: 1.125rem;
-  margin: 0.5rem;
-  text-align: center;
-}
-
-.li_image {
-  width: 2.5rem;
-  height: 3.21285rem;
-}
 
 .mention {
-  width: 100%;
+  @include pos($t: 0);
+  @include box($w: 100%);
   background: $primary-color;
   position: absolute;
   top: 0;
   &__box {
-    width: 1050px;
+    @include po;
+    @include box($w: rem(1050px));
     @include autoMargin;
-    position: relative;
   }
+
   &__box__text {
     display: block;
     @include autoMargin;
-    @include paddingY(11.5px);
+    @include paddingY(rem(11.5px));
+    @include font($fs: 1rem, $cl: $white);
     text-align: center;
-    color: $white;
-    font-size: 1rem;
   }
+
   &__box__button {
-    position: absolute;
-    right: 0;
-    border: 0;
-    background-color: transparent;
-    background-image: url(./../assets/icons/Close.svg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    @include buttonClear($url: "./../assets/icons/Close.svg");
+    @include pos($r: 0);
     top: 50%;
     transform: translateY(-50%);
-    height: 42px;
-    width: 42px;
-    cursor: pointer;
+    @include box(rem(42px), rem(42px));
   }
 }
 
@@ -183,10 +148,9 @@ ul {
   // 전체 배치
   &Up,
   &Down {
-    @include box(1050px, 521px);
-    @include flexbox($direction: column);
-    gap: 28px;
-    @include marginY(40px);
+    @include box(rem(1050px), rem(521px));
+    @include flexbox($direction: column, $gap: rem(28px));
+    @include marginY(rem(40px));
     @include autoMargin;
     @include font($cl: $content-color);
     // 버튼 배치
@@ -196,7 +160,7 @@ ul {
   // 제목 영역
   &__title {
     align-self: center;
-    @include font($fs: 28.43px, $fw: 700, $lh: 140%, $cl: $content-color);
+    @include font($fs: rem(28.43px), $fw: 700, $lh: 140%, $cl: $content-color);
   }
 
   // 상품 영역
@@ -206,17 +170,19 @@ ul {
 
   &__item {
     @include flexbox($direction: column);
-    @include box(249px, 426px);
+    @include box(rem(249px), rem(426px));
   }
 
   // 이미지 크기
   &__thumbnail {
     order: -1;
+    // hover 효과 위한 처리
+    overflow: hidden;
   }
 
   &__name {
     margin-top: rem(16px);
-    line-height: 160%;
+    @include font($lh: 160%);
   }
 
   &__regPrice {
@@ -229,7 +195,7 @@ ul {
       // 스타일링
       margin-top: rem(8px);
       padding-bottom: rem(24px);
-      @include font($fs: 21.328px, $fw: 600, $lh: 150%, $cl: $content-color);
+      @include font($fs: rem(21.328px), $fw: 600, $lh: 150%, $cl: $content-color);
     }
   }
 
@@ -237,24 +203,29 @@ ul {
   &__discount {
     .goods__disPrice {
       // 스타일링
-      @include flexbox();
-      gap: rem(8px);
-      @include marginY(8px);
-      @include font($fs: 21.328px, $fw: 600, $lh: 150%, $cl: $content-color);
+      @include flexbox($gap: rem(80px));
+      @include marginY(rem(8px));
+      @include font($fs: rem(21.328px), $fw: 600, $lh: 150%, $cl: $content-color);
+
       .goods__disRate {
         color: $accent-yellow;
       }
     }
 
     .goods__regPrice {
-      @include font($fs: 12.003px, $lh: 160%, $cl: $gray-400);
+      @include font($fs: rem(12.003px), $lh: 160%, $cl: $gray-400);
     }
   }
 }
 
 // 이미지 크기 조절
 .goods__thumbnail img {
-  height: rem(320px);
+  @include box($h: rem(320px));
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .goods {
@@ -269,5 +240,209 @@ ul {
     content: attr(data-price-label);
     display: inline-block;
     @include a11yHidden();
+  }
+}
+
+
+// 모달창
+.modal {
+
+  // 딤드 배경
+  &__background {
+    @include pos($pos: fixed, $t: 0, $l: 0);
+    @include box(100%, 100vh);
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    opacity: 0;
+  }
+
+  // 모달 배치를 위한 윈도우 창
+  &__window {
+    @include po();
+    @include box(100%, 100%);
+  }
+}
+
+// 실행효과
+.show {
+  opacity: 1;
+  z-index: 1;
+  transition: all .5s ease;
+
+  // 모달-장바구니창
+  .modal__cart {
+    transition: translate(-50%, -50%) all .5s;
+  }
+}
+
+// 모달-장바구니창
+.modal__cart {
+  @include box();
+  @include pos($t: 50%, $l: 50%);
+  transform: translate(-50%, -50%);
+}
+
+// 모달창 내부 배치
+.modal {
+
+  &__cart {
+    background: $base-bg;
+    @include box(rem(397px), rem(292px));
+    @include paddingX(rem(20px));
+    @include paddingY(rem(24px));
+    border-radius: rem(16px);
+    box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.20);
+    font-weight: 600;
+    // 내부배치
+    @include flexbox($direction: column, $gap: rem(28px));
+  }
+
+  // 모달창 배치 - 상품 영역
+  &__cart__goodsGroup {
+    @include po();
+    @include box(100%, rem(66px));
+  }
+}
+
+.count__container {
+  @include pos($b: 0, $r: 0);
+  @include box(rem(88px));
+  border: rem(1px) solid #C4C4C4;
+  border-radius: rem(3px);
+  @include flexbox($items: center, $gap: rem(8px));
+}
+
+.cart {
+  &__regPrice {
+    @include pos($b: 0, $l: 0);
+    @include font($fw: 600, $lh: 150%);
+  }
+
+  // 합계영역
+  &__sum {
+    @include flexbox($justify: space-between, $items: flex-end);
+    margin-top: rem(12px);
+  }
+
+  &__point {
+    float: right;
+    margin-top: rem(4px);
+  }
+
+  // 글씨
+  &__goodsName {
+    @include font($fw: 600, $lh: 150%, $cl: $content-color);
+  }
+
+  &__sumPrice {
+    @include font($fs: rem(28.43px), $fw: 700);
+  }
+}
+
+// 글씨
+.count__quantity,
+.cart__sumName {
+  @include font($fw: 600, $lh: 150%);
+}
+
+// 적립
+.point__title {
+  border-radius: rem(9px);
+  @include paddingX(rem(8px));
+  margin-right: rem(8px);
+  background: $error-color;
+  @include font($fs: rem(12.003px), $fw: 600, $lh: 150%, $cl: $base-bg);
+}
+
+// 배치 - 버튼
+.close {
+  @include gridbox($column-count: 2, $column-gap: rem(8px));
+}
+
+// 모달창 - 버튼 영역
+.button {
+
+  &__cancle,
+  &__addCart {
+    // 에이전트 스타일 초기화
+    @include padding;
+    border: none;
+    background: transparent;
+    // 설정
+    @include box(rem(174px), rem(54px));
+    border-radius: rem(3px);
+  }
+
+  &__cancle {
+    border: 1px solid #898989;
+    @include font($fw: 600, $lh: 150%, $cl: $content-color);
+  }
+
+  &__addCart {
+    background: $primary-color;
+    color: $base-bg;
+  }
+
+  &__reduce {
+    color: #A6A6A6;
+  }
+}
+
+
+// 팝업창
+
+.popup {
+  @include po();
+
+  &__container {
+    overflow: hidden;
+    @include pos(fixed, $t: 30%, $l: 40%);
+    z-index: 2;
+    @include box(rem(308px), rem(470.4px));
+    // 설정
+    border-radius: rem(16px);
+    background: $base-bg;
+    box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.20);
+
+    form {
+      @include flexbox()
+    }
+
+  }
+
+  &__img {
+    @include po();
+    @include box(100%, rem(410.2px));
+    overflow: hidden;
+  }
+}
+
+.img__detail {
+  @include pos($t: 0, $l: 0);
+  @include box(100%, 100%);
+  object-fit: cover;
+}
+
+.button {
+
+  &__closeToday,
+  &__close {
+    @include font($cl: $content-color);
+    background: $base-bg;
+    // 에이전트 스타일 초기화
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  &__closeToday {
+    @include box(rem(151.2px), rem(61px));
+    @include paddingX(rem(5.6px));
+    border-right: rem(0.7px) solid #E1E1E1;
+  }
+
+  &__close {
+    @include padding;
+    @include box(rem(154px), rem(61px));
   }
 }
