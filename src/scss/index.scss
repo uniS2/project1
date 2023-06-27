@@ -37,3 +37,99 @@
     cursor: pointer;
   }
 }
+
+// 상품 섹션
+
+.goods {
+
+  // 전체 배치
+  &Up,
+  &Down {
+    @include box(1050px, 521px);
+    @include flexbox($direction: column);
+    gap: 28px;
+    @include marginY(40px);
+    @include font($cl: $content-color);
+    // 버튼 배치
+    @include po();
+  }
+
+  // 제목 영역
+  &__title {
+    align-self: center;
+    @include font($fs: 28.43px, $fw: 700, $lh: 140%, $cl: $content-color);
+  }
+
+  // 상품 영역
+  &__group {
+    @include flexbox($justify: space-between, $items: flex-start);
+  }
+
+  &__item {
+    @include flexbox($direction: column);
+    @include box(249px, 426px);
+  }
+
+  // 이미지 크기
+  &__thumbnail {
+    order: -1;
+  }
+
+  &__name {
+    margin-top: rem(16px);
+    line-height: 160%;
+  }
+
+  &__regPrice {
+    order: 1;
+  }
+
+  // 정상가 영역
+  &__regular {
+    .goods__regPrice {
+      // 스타일링
+      margin-top: rem(8px);
+      padding-bottom: rem(24px);
+      @include font($fs: 21.328px, $fw: 600, $lh: 150%, $cl: $content-color);
+    }
+  }
+
+  // 할인가 영역
+  &__discount {
+    .goods__disPrice {
+      // 스타일링
+      @include flexbox();
+      gap: rem(8px);
+      @include marginY(8px);
+      @include font($fs: 21.328px, $fw: 600, $lh: 150%, $cl: $content-color);
+      .goods__disRate {
+        color: $accent-yellow;
+      }
+    }
+
+    .goods__regPrice {
+      @include font($fs: 12.003px, $lh: 160%, $cl: $gray-400);
+    }
+  }
+}
+
+// 이미지 크기 조절
+.goods__thumbnail img {
+  height: rem(320px);
+}
+
+.goods {
+
+  // 버튼 배치
+  &__list {
+    @include po();
+  }
+
+  // ins, del 태그 스크린리더 처리
+  &__regPrice del::after,
+  &__disPrice ins::after {
+    content: attr(data-price-label);
+    display: inline-block;
+    @include a11yHidden();
+  }
+}

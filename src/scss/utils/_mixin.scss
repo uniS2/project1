@@ -86,6 +86,19 @@
   overflow: hidden;
 }
 
+/* 추가 */
+@mixin box($w, $h) {
+  width: rem($w);
+  height: rem($h);
+}
+
+@mixin font($fs: 16px, $fw: 400, $lh: normal, $cl: black) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  color: $cl;
+}
+
 // Float 해제를 위한 clear 스타일 ---------------------------------------------------- /
 @mixin clearFix {
   &::after {
