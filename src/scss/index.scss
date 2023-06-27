@@ -178,7 +178,7 @@ ul {
   &Down {
     @include box(rem(1050px), rem(521px));
     @include flexbox($direction: column, $gap: rem(28px));
-    @include marginY(40px);
+    @include marginY(rem(40px));
     @include autoMargin;
     @include font($cl: $content-color);
     // 버튼 배치
@@ -188,7 +188,7 @@ ul {
   // 제목 영역
   &__title {
     align-self: center;
-    @include font($fs: 28.43px, $fw: 700, $lh: 140%, $cl: $content-color);
+    @include font($fs: rem(28.43px), $fw: 700, $lh: 140%, $cl: $content-color);
   }
 
   // 상품 영역
@@ -204,11 +204,13 @@ ul {
   // 이미지 크기
   &__thumbnail {
     order: -1;
+    // hover 효과 위한 처리
+    overflow: hidden;
   }
 
   &__name {
     margin-top: rem(16px);
-    line-height: 160%;
+    @include font($lh: 160%);
   }
 
   &__regPrice {
@@ -221,7 +223,7 @@ ul {
       // 스타일링
       margin-top: rem(8px);
       padding-bottom: rem(24px);
-      @include font($fs: 21.328px, $fw: 600, $lh: 150%, $cl: $content-color);
+      @include font($fs: rem(21.328px), $fw: 600, $lh: 150%, $cl: $content-color);
     }
   }
 
@@ -230,8 +232,8 @@ ul {
     .goods__disPrice {
       // 스타일링
       @include flexbox($gap: rem(80px));
-      @include marginY(8px);
-      @include font($fs: 21.328px, $fw: 600, $lh: 150%, $cl: $content-color);
+      @include marginY(rem(8px));
+      @include font($fs: rem(21.328px), $fw: 600, $lh: 150%, $cl: $content-color);
 
       .goods__disRate {
         color: $accent-yellow;
@@ -239,7 +241,7 @@ ul {
     }
 
     .goods__regPrice {
-      @include font($fs: 12.003px, $lh: 160%, $cl: $gray-400);
+      @include font($fs: rem(12.003px), $lh: 160%, $cl: $gray-400);
     }
   }
 }
@@ -247,6 +249,11 @@ ul {
 // 이미지 크기 조절
 .goods__thumbnail img {
   @include box($h: rem(320px));
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .goods {
@@ -267,171 +274,174 @@ ul {
 
 
 // 모달창
+.modal {
 
-// 딤드 배경
-.background {
-  @include pos($pos: fixed, $t: 0, $l: 0);
-  @include box(100%, 100vh);
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: -1;
-  opacity: 0;
+  // 딤드 배경
+  &__background {
+    @include pos($pos: fixed, $t: 0, $l: 0);
+    @include box(100%, 100vh);
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    opacity: 0;
+  }
+
+  // 모달 배치를 위한 윈도우 창
+  &__window {
+    @include po();
+    @include box(100%, 100%);
+  }
 }
 
-// 모달 배치를 위한 창
-.window {
-  @include po();
-  @include box(100%, 100%);
-}
-
-// 클릭시
+// 실행효과
 .show {
   opacity: 1;
   z-index: 1;
   transition: all .5s ease;
 
-  // 모달창 띄우기
+  // 모달-장바구니창
   .modal__cart {
-    transition: translate(-50%, -50%);
-    transition: all .5s;
+    transition: translate(-50%, -50%) all .5s;
   }
 }
 
 // 모달-장바구니창
 .modal__cart {
+  @include box();
   @include pos($t: 50%, $l: 50%);
   transform: translate(-50%, -50%);
 }
 
-/* 모달창 내부 배치 */
+// 모달창 내부 배치
+.modal {
 
-/* 글씨 */
-.cart {
-  &__goodsName {
-    @include font($fw: 600, $lh: 150%, $cl: $content-color);
+  &__cart {
+    background: $base-bg;
+    @include box(rem(397px), rem(292px));
+    @include paddingX(rem(20px));
+    @include paddingY(rem(24px));
+    border-radius: rem(16px);
+    box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.20);
+    font-weight: 600;
+    // 내부배치
+    @include flexbox($direction: column, $gap: rem(28px));
   }
 
-  &__sumPrice {
-    @include font($fs: rem(28.43px), $fw: 700, $cl: $content-color)
+  // 모달창 배치 - 상품 영역
+  &__cart__goodsGroup {
+    @include po();
+    @include box(100%, rem(66px));
   }
-
-  &____reduce {
-    color: #A6A6A6;
-  }
-}
-
-/* 배차 */
-.modal__cart {
-  /* 글씨 */
-  @include font($fw: 600, $cl: $content-color);
-  /* 넓이 */
-  @include box(rem(356px), rem(244px));
-  @include paddingX(rem(20px));
-  @include paddingY(rem(24px));
-  /* 스타일링 */
-  border-radius: rem(16px);
-  background: $base-bg;
-  box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.20);
-  /* 내부배치 */
-  @include flexbox($direction: column);
-  row-gap: rem(28px);
-}
-
-/* 모달창 배차 - 상품 영역 */
-.goods__container {
-  @include po();
-  @include box(100%, 66px);
-}
-
-.cart__regPrice {
-  @include pos($b: 0, $l: 0);
 }
 
 .count__container {
   @include pos($b: 0, $r: 0);
-  @include box(rem(84px));
-  border: 1px solid #C4C4C4;
+  @include box(rem(88px));
+  border: rem(1px) solid #C4C4C4;
+  border-radius: rem(3px);
+  @include flexbox($items: center, $gap: rem(8px));
 }
 
-.button {
-
-  &__add,
-  &__reduce {
-    // 에이전트 스타일 초기화
-    padding: 0;
-    border: none;
-    background: transparent;
-    @include box(rem(30px), rem(30px));
-  }
-}
-
-/* 모달창 - 합계 영역 */
 .cart {
+  &__regPrice {
+    @include pos($b: 0, $l: 0);
+    @include font($fw: 600, $lh: 150%);
+  }
+
+  // 합계영역
   &__sum {
-    @include flexbox($justify: space-between);
+    @include flexbox($justify: space-between, $items: flex-end);
+    margin-top: rem(12px);
   }
 
   &__point {
     float: right;
     margin-top: rem(4px);
   }
+
+  // 글씨
+  &__goodsName {
+    @include font($fw: 600, $lh: 150%, $cl: $content-color);
+  }
+
+  &__sumPrice {
+    @include font($fs: rem(28.43px), $fw: 700);
+  }
 }
 
+// 글씨
+.count__quantity,
+.cart__sumName {
+  @include font($fw: 600, $lh: 150%);
+}
+
+// 적립
 .point__title {
-  border-radius: rem(1px);
+  border-radius: rem(9px);
   @include paddingX(rem(8px));
   margin-right: rem(8px);
   background: $error-color;
-  color: $base-bg;
+  @include font($fs: rem(12.003px), $fw: 600, $lh: 150%, $cl: $base-bg);
 }
 
-#close {
+// 배치 - 버튼
+.close {
   @include gridbox($column-count: 2, $column-gap: rem(8px));
 }
 
-/* 모달창 - 버튼 영역 */
+// 모달창 - 버튼 영역
 .button {
 
   &__cancle,
   &__addCart {
     // 에이전트 스타일 초기화
-    padding: 0;
+    @include padding;
     border: none;
     background: transparent;
     // 설정
     @include box(rem(174px), rem(54px));
-    border-radius: rem(4px);
+    border-radius: rem(3px);
   }
 
   &__cancle {
     border: 1px solid #898989;
+    @include font($fw: 600, $lh: 150%, $cl: $content-color);
   }
 
   &__addCart {
     background: $primary-color;
     color: $base-bg;
   }
+
+  &__reduce {
+    color: #A6A6A6;
+  }
 }
 
 
-/* 팝업창 */
+// 팝업창
 
 .popup {
   @include po();
 
   &__container {
     overflow: hidden;
-    @include pos(fixed, $t: 20%, $l: 20%);
+    @include pos(fixed, $t: 30%, $l: 40%);
     z-index: 2;
-    @include box(rem(440px), rem(672px));
-    /* 설정 */
+    @include box(rem(308px), rem(470.4px));
+    // 설정
     border-radius: rem(16px);
     background: $base-bg;
     box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.20);
+
+    form {
+      @include flexbox()
+    }
+
   }
 
   &__img {
     @include po();
-    @include box(100%, 586px);
+    @include box(100%, rem(410.2px));
     overflow: hidden;
   }
 }
@@ -455,13 +465,13 @@ ul {
   }
 
   &__closeToday {
-    @include box(rem(216px), rem(86px));
-    @include paddingX(rem(8px));
-    border-right: rem(1px) solid #E1E1E1;
+    @include box(rem(151.2px), rem(61px));
+    @include paddingX(rem(5.6px));
+    border-right: rem(0.7px) solid #E1E1E1;
   }
 
   &__close {
     @include padding;
-    @include box(rem(220px), rem(86px));
+    @include box(rem(154px), rem(61px));
   }
 }

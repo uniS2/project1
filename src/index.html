@@ -8,6 +8,7 @@
   <link rel="stylesheet" as="style" crossorigin
     href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css" />
   <link rel="stylesheet" href="/style/index.css" />
+  <script defer src="./js/modal__cart.js"></script>
 </head>
 
 <body>
@@ -201,7 +202,7 @@
               <dd class="goods__regPrice"><ins>4,980 원</ins></dd>
             </dl>
           </a>
-          <button type="button" class="button__cart" id="show" aria-label="장바구니로 이동"></button>
+          <button type="button" class="button__cart show" aria-label="장바구니로 이동"></button>
         </div>
 
         <!-- 두번째 요소 -->
@@ -265,72 +266,6 @@
       <!-- 슬라이드 버튼 -->
       <button type="button" class="button__next" aria-label="다음 상품 보여주기"></button>
     </section>
-    <!-- 모달: 장바구니 -->
-    <div class="background">
-      <div class="window">
-        <!-- aria-labelledby="cartGoods" -->
-        <dialog class="modal__cart" open>
-          <h2 class="a11yHidden">장바구니</h2>
-
-          <div class="goods__container">
-            <dl class="cart__goods">
-              <dt class="a11yHidden">상품명</dt>
-              <dd class="cart__goodsName">
-                <span aria-hidden="true">[</span>풀무원<span aria-hidden="true">]</span>
-                탱탱쫄면 (4개입)
-              </dd>
-              <dt class="a11yHidden">정상가</dt>
-              <dd class="cart__regPrice"><ins>4,980 원</ins>
-              </dd>
-            </dl>
-
-            <!-- css를 통한 수량과 합계 변화가 어려워 고정형으로 처리 -->
-            <div class="count__container">
-              <button type="button" class="button__reduce" aria-label="감소">-</button>
-              <span class="count__quantity">1</span>
-              <button type="button" class="button__add" aria-label="증가">+</button>
-            </div>
-          </div>
-
-          <div class="cart__count">
-            <dl class="cart__sum">
-              <dt class="cart__sumName">합계</dt>
-              <dd class="cart__sumPrice">4,980 원</dd>
-            </dl>
-
-            <div class="cart__point">
-              <span class="point__title">적립</span>
-              <span class="point__detail">구매 시 5원 적립</span>
-            </div>
-          </div>
-
-          <form id="close">
-            <!-- method="dialog" -->
-            <button class="button__cancle" value="cancel">취소</button>
-            <button class="button__addCart" value="default">장바구니 담기</button>
-          </form>
-
-        </dialog>
-      </div>
-    </div>
-
-    <!-- <script src="./js/modad_cart.js"></script> -->
-    <script>
-      function showModal() {
-        document.querySelector(".background").classList.add("show");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeModal(event) {
-        event.preventDefault(); // 기본 동작 취소
-        document.querySelector(".background").classList.remove("show");
-        document.body.style.overflow = "auto";  // 스크롤 활성화
-      }
-
-      document.querySelector("#show").addEventListener("click", showModal);
-
-      document.querySelector("#close").addEventListener("click", closeModal);
-    </script>
 
     <!-- 배너 -->
     <section class="banner">
@@ -422,6 +357,54 @@
       <!-- 슬라이드 버튼 -->
       <button type="button" class="button__next" aria-label="다음 상품 보여주기"></button>
     </section>
+
+    <!-- 모달: 장바구니 -->
+    <div class="modal__background">
+      <div class="modal__window">
+        <dialog class="modal__cart" aria-labelledby="cartGoods" open>
+          <h2 class="a11yHidden" id="cartGoods">장바구니</h2>
+
+          <div class="modal__cart__goodsGroup">
+            <dl class="cart__goods">
+              <dt class="a11yHidden">상품명</dt>
+              <dd class="cart__goodsName">
+                <span aria-hidden="true">[</span>풀무원<span aria-hidden="true">]</span>
+                탱탱쫄면 (4개입)
+              </dd>
+              <dt class="a11yHidden">정상가</dt>
+              <dd class="cart__regPrice"><ins>4,980 원</ins>
+              </dd>
+            </dl>
+
+            <!-- css를 통한 수량과 합계 변화가 어려워 고정형으로 처리 -->
+            <div class="count__container">
+              <button type="button" class="button__reduce" aria-label="감소">-</button>
+              <span class="count__quantity">1</span>
+              <button type="button" class="button__add" aria-label="증가">+</button>
+            </div>
+          </div>
+
+          <div class="cart__count">
+            <dl class="cart__sum">
+              <dt class="cart__sumName">합계</dt>
+              <dd class="cart__sumPrice">4,980 원</dd>
+            </dl>
+
+            <div class="cart__point">
+              <span class="point__title">적립</span>
+              <span class="point__detail">구매 시 5원 적립</span>
+            </div>
+          </div>
+
+          <form class="close">
+            <!-- method="dialog" -->
+            <button class="button__cancle" value="cancel">취소</button>
+            <button class="button__addCart" value="default">장바구니 담기</button>
+          </form>
+
+        </dialog>
+      </div>
+    </div>
     <!-- 사이드바 -->
     <aside class="side" role="complementary">
       <h2 class="a11yHidden">최근 본 상품</h2>
@@ -634,10 +617,9 @@
       <button class="mention__box__button"></button>
     </div>
   </div>
-   <!-- 팝업창 -->
-   <div class="popup">
-    <dialog class="popup__container">
-      <!-- open -->
+  <!-- 팝업창 -->
+  <div class="popup">
+    <dialog class="popup__container" open>
       <div class="popup__img">
         <a href="#">
           <img class="img__detail" src="./assets/image/popup.svg" alt="칼리 뷰티 플랫폼 상세페이지" />
