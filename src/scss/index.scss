@@ -7,146 +7,141 @@
 body {
   width: 100%;
   height: 100vh;
+  @include font($cl: $content-color);
 }
 /* 공통 부분 */
 .a11yHidden,
 legend {
-    overflow: hidden;
-    position: absolute !important;
-    clip: rect(0, 0, 0, 0);
-    clip-path: inset(50%);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 /* 배너 섹션 */
 .banner {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .banner__image {
-    max-width: 62.625rem;
-    padding: 40px 0px;
+  max-width: 62.625rem;
+  padding: 40px 0px;
 }
 
 /* 이벤트 섹션 */
 .event {
-    position: relative;
-    width: 120rem;
-    height: 23.125rem;
+  position: relative;
+  width: 120rem;
+  height: 23.125rem;
 }
 
 .event__image {
-   width: inherit;
-   height: inherit;
+  width: inherit;
+  height: inherit;
 }
 
 .button__left {
-    position: absolute;
-    top: 9.13rem;
-    right: 94.88rem;
-    bottom: 10.75rem;
-    left: 21.88rem;
-    border: none;
-    background: transparent;
- }
+  position: absolute;
+  top: 9.13rem;
+  right: 94.88rem;
+  bottom: 10.75rem;
+  left: 21.88rem;
+  border: none;
+  background: transparent;
+}
 
- .button__right {
-    position: absolute;
-    top: 9.13rem;
-    right: 21.88rem;
-    bottom: 10.75rem;
-    left: 94.87rem;
-    transform: rotate(180deg);
-    border: none;
-    background: transparent;
- }
+.button__right {
+  position: absolute;
+  top: 9.13rem;
+  right: 21.88rem;
+  bottom: 10.75rem;
+  left: 94.87rem;
+  transform: rotate(180deg);
+  border: none;
+  background: transparent;
+}
 
 .button__left,
 .button__right {
-    opacity: 0;
-    transition: opacity 0.5s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
 .event:hover .button__left {
-    display: block;
+  display: block;
 }
 
- .event:hover .button__right {
-    display: block;
- }
+.event:hover .button__right {
+  display: block;
+}
 
 .event:hover .button__left,
 .event:hover .button__right {
-    opacity: 1;
+  opacity: 1;
 }
 /* 트랜지션으로 버튼 사라지는 호버 속도 늦추기 */
-
 
 /* 사이드바 섹션 */
 
 ul {
-    list-style: none;
-    overflow: hidden;
+  list-style: none;
+  overflow: hidden;
 }
 
 .side {
-    position: relative;
+  position: relative;
 }
 
-
 .side__container {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #c4c4c4;
-    align-items: center;
-    top: 30%;
-    right: 2.44rem; 
-    padding: 0.5rem;
-    width: 5rem;
-    height: 13.9375rem;
-    background: white;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #c4c4c4;
+  align-items: center;
+  top: 30%;
+  right: 2.44rem;
+  padding: 0.5rem;
+  width: 5rem;
+  height: 13.9375rem;
+  background: white;
 }
 
 .button__top {
-    width: 1.125rem;
-    height: 1.125rem;
-    border: none;
-    background: transparent;
-    padding: 0;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: none;
+  background: transparent;
+  padding: 0;
 }
 
 .button__bottom {
-    width: 1.125rem;
-    height: 1.125rem;
-    border: none;
-    background: transparent;
-    padding: 0;
-    margin-top: 0.5rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-top: 0.5rem;
 }
 
 .sidebar__title {
-    font-size: 0.75rem;
-    line-height: 150%;
-    font-weight: 600;
-    color: black;
-    width: 4.5rem;
-    height: 1.125rem;
-    margin: 0.5rem;
-    text-align: center;
+  font-size: 0.75rem;
+  line-height: 150%;
+  font-weight: 600;
+  color: black;
+  width: 4.5rem;
+  height: 1.125rem;
+  margin: 0.5rem;
+  text-align: center;
 }
 
 .li_image {
-    width: 2.5rem;
-    height: 3.21285rem;
+  width: 2.5rem;
+  height: 3.21285rem;
 }
-
-
-
-
 
 .mention {
   width: 100%;
@@ -185,7 +180,6 @@ ul {
 // 상품 섹션
 
 .goods {
-
   // 전체 배치
   &Up,
   &Down {
@@ -193,6 +187,7 @@ ul {
     @include flexbox($direction: column);
     gap: 28px;
     @include marginY(40px);
+    @include autoMargin;
     @include font($cl: $content-color);
     // 버튼 배치
     @include po();
@@ -263,7 +258,6 @@ ul {
 }
 
 .goods {
-
   // 버튼 배치
   &__list {
     @include po();
