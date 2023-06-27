@@ -2,84 +2,74 @@
 
 .login {
   padding-top: rem(80px);
-  margin: 0 auto;
+  @include autoMargin;
   text-align: center;
-}
 
-.login__title {
-  font-size: rem(21px);
-  font-weight: 700;
-}
+  &__title {
+    @include font(rem(21px), 700);
+  }
+  &__form {
+    width: 340px;
+    padding: rem(44px) 0 rem(80px) 0;
+    @include autoMargin;
+  }
+  &__fieldset {
+    display: flex;
+    @include flexbox(column);
+    gap: rem(9.6px);
+  }
+  &__input {
+    @include padding(12px);
+    line-height: 1rem;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--gray-300, #a6a6a6);
+    &::placeholder {
+      @include font(rem(14px));
+    }
 
-.login__form {
-  width: 340px;
-  padding: rem(44px) 0 rem(80px) 0;
-  margin: 0 auto;
-}
+    &:focus {
+      outline: none;
+      border: 1px solid #5f0080;
 
-.login__fieldset {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.login__input {
-  padding: 0.75rem;
-  line-height: 1rem;
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid var(--gray-300, #a6a6a6);
-}
-
-.login__input::placeholder {
-  font-size: 14px;
-}
-
-.login__input:focus {
-  outline: none;
-  border: 1px solid #5f0080;
-}
-
-.login__input:focus::placeholder {
-  color: #5f0080;
+      &::placeholder {
+        color: #5f0080;
+      }
+    }
+  }
+  &__find {
+    display: flex;
+    width: 100%;
+    @include flexbox(row, flex-end, nowrap);
+    font-size: 12px;
+    gap: 4px;
+  }
+  &__button {
+    background: var(--primary, #5f0080);
+    margin-top: 1rem;
+    @include padding(rem(16px));
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid var(--gray-300, #a6a6a6);
+    color: white;
+  }
+  &__signIn {
+    width: 100%;
+    border-radius: 4px;
+    @include padding(rem(16px));
+    color: #5f0080;
+    background: white;
+    border: 1px solid var(--primary, #5f0080);
+  }
 }
 
 .errorMessage {
-  color: red;
   display: none;
-  font-size: 12px;
   text-align: left;
+  @include font(rem(12px), red);
 }
 
 .is--invalid + .errorMessage {
   display: block;
   margin-left: 2px;
-}
-
-.login__find {
-  display: flex;
-  width: 100%;
-  flex-flow: row nowrap;
-  justify-content: flex-end;
-  font-size: 12px;
-  gap: 4px;
-}
-
-.login__button {
-  background: var(--primary, #5f0080);
-  margin-top: 1rem;
-  padding: 1rem;
-  width: 100%;
-  border-radius: 4px;
-  border: 1px solid var(--gray-300, #a6a6a6);
-  color: white;
-}
-
-.login__signIn {
-  width: 100%;
-  border-radius: 4px;
-  padding: 1rem;
-  color: #5f0080;
-  background: white;
-  border: 1px solid var(--primary, #5f0080);
 }
