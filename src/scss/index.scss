@@ -7,6 +7,7 @@
 body {
   width: 100%;
   height: 100vh;
+  @include font($cl: $content-color);
 }
 
 /* 공통 부분 */
@@ -23,7 +24,6 @@ legend {
 }
 
 /* 배너 섹션 */
-
 .banner {
   @include flexbox($justify: center);
   &__image {

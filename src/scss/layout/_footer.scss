@@ -1,164 +1,141 @@
 @use "./../utils/" as *;
-.footer {
-  height: rem(629px);
-  color: $content-color;
 
+.footer {
+  @include box($w: 100vw, $h: rem(629px));
   &__contents {
-    max-width: 1050px;
-    display: flex;
+    max-width: rem(1050px);
     @include autoMargin;
     @include flexbox(row, space-between, inherit, wrap);
   }
   &__cs {
     flex-basis: 50%;
-    display: flex;
-    gap: 1rem;
-    @include flexbox(column, nowrap);
+    @include flexbox(column, $gap: rem(16px));
 
     &__title {
-      @include font(rem(21px), 700, 140%, inherit);
+      @include font($fs: rem(21px), $fw: 700, $lh: 140%, $cl: $content-color);
     }
     &__inquiry {
-      display: flex;
-      @include flexbox(column, flex-start, stretch, nowrap);
-      gap: 1rem;
+      @include flexbox(column, flex-start, stretch, nowrap, rem(16px));
     }
     &__nonMember {
-      display: flex;
-      line-height: 160%;
       vertical-align: top;
-      flex-flow: column nowrap;
+      @include flexbox(column, nowrap);
+      @include font($fs: rem(12px), $lh: 160%);
     }
   }
   &__about {
     flex-basis: 50%;
-    display: flex;
-    gap: rem(28px);
-    padding-top: rem(28px);
+    padding-top: rem(8px);
+    @include flexbox(column, nowrap, $gap: rem(36px));
+    &__list {
+      @include flexbox($direction: row, $justify: space-between, $wrap: nowrap);
+    }
+  }
+  &__companyInfo {
     @include flexbox(column, nowrap);
+    @include font($fs: rem(12px), $lh: 160%, $cl: inherit);
   }
-}
-
-.cs {
-  &__info {
-    &Number {
-      @include font(rem(37px), 700, 140%, inherit);
+  &__sns {
+    &List {
+      @include flexbox(row, nowrap, $gap: rem(20px));
     }
-    &Time {
-      @include font(rem(16px), 600, 150%, inherit);
-      margin-left: 8px;
+    &Link {
+      @include box(rem(30px), rem(30px));
+      background-repeat: no-repeat;
+      background-size: cover;
     }
   }
-  &__inquiry {
-    &KaKao,
-    &1to1,
-    &Bulk {
-      display: flex;
-      gap: 1rem;
-    }
+  &__mark {
+    margin-top: rem(20px);
+    @include box($w: 100vw);
+    @include flexbox(row, nowrap, $gap: rem(12px));
     &__button {
-      border: 1px solid var(--gray-200, #c4c4c4);
-      width: 140px;
-      height: rem(40px);
-      padding: rem(4px);
-      background: white;
-    }
-    &__description {
-      margin-top: -3px;
+      background: transparent;
+      border: none;
+      padding: rem(24px) 0rem rem(32px) 0rem;
+      min-width: rem(230px);
+      @include flexbox($direction: row, $items: flex-start);
+      &:nth-child(3) {
+        @include box($w: 360px);
+      }
     }
   }
-}
+  &__copyright {
+    background: var(--gray-50, #f9f9f9);
+    padding: rem(20px) 0 rem(32px) 0;
+    @include box($w: 100vw, $h: auto);
+    @include flexbox(column, $justify: center, $items: center);
+    @include font($fs: rem(10px), $lh: 160%, $cl: #898989);
+  }
 
-.cs__inquiry__description,
-.footer__cs__nonMember {
-  display: flex;
-  flex-flow: column nowrap;
-  line-height: 160%;
-  vertical-align: top;
-}
-.footer__about__list {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  font-size: rem(16px);
-}
-.footer__companyInfo {
-  display: flex;
-  flex-flow: column nowrap;
-  font-size: rem(12px);
-  line-height: 160%;
-}
-.footer__snsList {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: rem(20px);
-}
-.footer__snsLink {
-  width: 30px;
-  height: 30px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-#blogLink {
-  background-image: url("./../../assets/icons/Blog.svg");
-}
+  &__copyright__notice {
+    margin-top: 8px;
+  }
+  &__companyInfo__description span:nth-child(even) {
+    @include marginX(rem(5px));
+  }
 
-#facebookLink {
-  background-image: url("./../../assets/icons/FaceBook.svg");
-}
+  .cs {
+    &__info {
+      &Number {
+        @include font(rem(37px), 700, 140%, inherit);
+      }
+      &Time {
+        margin-left: rem(8px);
+        @include font(rem(16px), 600, 150%, inherit);
+      }
+    }
+    &__inquiry {
+      &KaKao,
+      &1to1,
+      &Bulk {
+        @include flexbox($gap: rem(16px));
+      }
+      &__button {
+        border: 1px solid var(--gray-200, #c4c4c4);
+        background: white;
+        @include box(rem(140px), rem(40px));
+        @include padding(rem(4px));
+      }
+      &__description {
+        margin-top: -3px;
+        vertical-align: top;
+        @include flexbox(column, nowrap);
+        @include font($lh: 160%);
+      }
+    }
+  }
 
-#instagramLink {
-  background-image: url("./../../assets/icons/Instagram.svg");
-}
+  .mark {
+    &__description {
+      display: block;
+      margin-left: 8px;
+      text-align: left;
+      @include font($fs: rem(10px), $lh: 160%, $cl: $content-color);
+      @include flexbox(column);
+    }
+  }
 
-#snsLink {
-  background-image: url("./../../assets/icons/sns.svg");
-}
+  #blogLink {
+    background-image: url("./../../assets/icons/Blog.svg");
+  }
 
-#youtubeLink {
-  background-image: url("./../../assets/icons/Youtube.svg");
-}
+  #facebookLink {
+    background-image: url("./../../assets/icons/FaceBook.svg");
+  }
 
-.footer__mark {
-  width: 100%;
-  margin-top: 20px;
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 8px;
-}
-.footer__mark__button {
-  display: flex;
-  background: transparent;
-  justify-content: space-between;
-  align-items: flex-start;
-  border: none;
-  padding: 1.5rem 0rem 2rem 0rem;
-}
-.mark__descriptionWrapper {
-  display: flex;
-  flex-direction: column;
-}
+  #instagramLink {
+    background-image: url("./../../assets/icons/Instagram.svg");
+  }
 
-.mark__description {
-  display: block;
-  margin-left: 8px;
-  font-size: 10px;
-  line-height: 160%;
-  text-align: left;
-}
+  #snsLink {
+    background-image: url("./../../assets/icons/sns.svg");
+  }
 
-.footer__copyright {
-  display: flex;
-  width: 1912px;
-  flex-direction: column;
-  align-items: center;
-  color: #898989;
-  background: var(--gray-50, #f9f9f9);
-  font-size: 10px;
-  line-height: 160%;
-  padding: 20px 0 32px 0;
-}
-
-.footer__copyright__notice {
-  margin-top: 8px;
+  #youtubeLink {
+    background-image: url("./../../assets/icons/Youtube.svg");
+  }
+  .primary {
+    color: $primary-color;
+  }
 }
