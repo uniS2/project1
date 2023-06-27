@@ -15,7 +15,7 @@
   <body>
     <!-- 공통 헤더 -->
     <header class="header">
-      <div class="header__group">
+      <div class="header__group clearfix">
         <div class="header__group__tab">
           <h1 class="group__logo">
             <img
@@ -26,7 +26,9 @@
           </h1>
           <ul class="group__itemBox">
             <li class="group__itemBox__item">
-              <a class="itemBox__link" href="#">마켓칼리</a>
+              <a class="itemBox__link itemBox__link--active" href="#"
+                >마켓칼리</a
+              >
             </li>
             <li class="group__itemBox__item">
               <span class="itemBox__item__divider" aria-hidden="true">ㅣ</span
@@ -79,17 +81,23 @@
           </li>
         </ul>
         <ul class="header__group__memberOnly">
-          <li class="group__memberOnlyLi"><a href="#">회원가입</a></li>
           <li class="group__memberOnlyLi">
-            <span class="group__memberOnlyLi__divider" aria-hidden="true"
-              >ㅣ</span
+            <a
+              class="group__memberOnlyLi__link group__memberOnlyLi--active"
+              href="#"
+              >회원가입</a
             >
-            <a href="/login.html">로그인</a>
           </li>
           <li class="group__memberOnlyLi">
             <span class="group__memberOnlyLi__divider" aria-hidden="true"
               >ㅣ</span
-            ><a href="#">고객센터</a>
+            >
+            <a href="/login.html" class="group__memberOnlyLi__link">로그인</a>
+          </li>
+          <li class="group__memberOnlyLi">
+            <span class="group__memberOnlyLi__divider" aria-hidden="true"
+              >ㅣ</span
+            ><a href="#" class="group__memberOnlyLi__link">고객센터</a>
             <!-- 고객센터 옆 화살표는 li background로 처리 -->
           </li>
         </ul>
@@ -200,11 +208,12 @@
       <!-- 메인 이벤트 섹션 -->
       <section class="event">
         <h2 class="a11yHidden">메인 이벤트</h2>
+
         <img
-          src="/assets/image/banner04.svg"
-          alt="컬리 이 주의 특가 한 눈에 보기"
-          class="event__image"
+            src="/assets/image/banner04.svg"
+            alt="컬리 이 주의 특가 한 눈에 보기" class="event__image"
         />
+
         <button
           type="button"
           class="button__left"
@@ -219,6 +228,7 @@
         >
           <img src="/assets/icons/Arrow.svg" alt="오른쪽 이동 화살표" />
         </button>
+        
       </section>
       <!-- 상품1 섹션 -->
       <section class="goodsUp">
@@ -375,7 +385,7 @@
         <a href="#"
           ><img
             src="/assets/image/banner03.svg"
-            alt="컬리 퍼플위크 안내 적립률up+3종 쿠폰팩, 더 풍성해진 혜택 10월24일 부터 10월28일 까지"
+            alt="컬리 퍼플위크 안내 적립률up+3종 쿠폰팩, 더 풍성해진 혜택 10월24일 부터 10월28일 까지" class="banner__image"
         /></a>
       </section>
       <!-- 상품2 섹션 -->
@@ -525,14 +535,13 @@
       </section>
       <!-- 사이드바 -->
       <aside class="side" role="complementary">
-        <h2 class="a11yHidden">사이드바</h2>
+        <h2 class="a11yHidden">최근 본 상품</h2>
         <div class="side__container">
           <button
             type="button"
             class="button__top"
-            aria-label="위쪽항목으로 이동"
           >
-            <img src="/assets/icons/Arrow.svg" alt="위쪽 이동 화살표" />
+            <img src="/assets/icons/Direction=Up.svg" alt="위쪽 이동 화살표" />
           </button>
           <span class="sidebar__title"> 최근 본 상품 </span>
           <ul>
@@ -541,6 +550,7 @@
                 <img
                   src="/assets/image/goods1.svg"
                   alt="풀무원 탱탱쫄면(4개입)"
+                  class="li_image"
                 />
               </a>
             </li>
@@ -549,6 +559,7 @@
                 <img
                   src="/assets/image/goods4.svg"
                   alt="프로쉬 베이비 세탁세제"
+                  class="li_image"
                 />
               </a>
             </li>
@@ -557,6 +568,7 @@
                 <img
                   src="/assets/image/goods2.svg"
                   alt="온더바디 죠르디 시카 자석 선쿠션"
+                  class="li_image"
                 />
               </a>
             </li>
@@ -564,9 +576,8 @@
           <button
             type="button"
             class="button__bottom"
-            aria-label="아래항목으로 이동"
           >
-            <img src="/assets/icons/Arrow.svg" alt="아래쪽 이동 화살표" />
+            <img src="/assets/icons/Direction=Down.svg" alt="아래쪽 이동 화살표" />
           </button>
         </div>
       </aside>
@@ -788,7 +799,12 @@
       </div>
     </footer>
     <div class="mention">
-      <span>지금 가입하고 인기상품 100원에 받아가세요!</span>
+      <div class="mention__box">
+        <span class="mention__box__text"
+          >지금 가입하고 인기상품 100원에 받아가세요!</span
+        >
+        <button class="mention__box__button"></button>
+      </div>
     </div>
   </body>
 </html>
