@@ -1,15 +1,14 @@
-
 @use "./../utils/unit" as *;
 
 // padding 관련 믹스인
 @mixin paddingY($paddingY) {
-  padding-top: rem($paddingY);
-  padding-bottom: rem($paddingY);
+  padding-top: $paddingY;
+  padding-bottom: $paddingY;
 }
 
 @mixin paddingX($paddingX: 0) {
-  padding-left: rem($paddingX);
-  padding-right: rem($paddingX);
+  padding-left: $paddingX;
+  padding-right: $paddingX;
 }
 
 @mixin padding($padding: 0) {
@@ -21,13 +20,13 @@
 
 // margin 관련 믹스인
 @mixin marginY($marginY: 0) {
-  margin-top: rem($marginY);
-  margin-bottom: rem($marginY);
+  margin-top: $marginY;
+  margin-bottom: $marginY;
 }
 
 @mixin marginX($marginX: 0) {
-  margin-left: rem($marginX);
-  margin-right: rem($marginX);
+  margin-left: $marginX;
+  margin-right: $marginX;
 }
 
 @mixin margin($margin: 0) {
@@ -35,10 +34,6 @@
   margin-right: $margin;
   margin-top: $margin;
   margin-bottom: $margin;
-}
-@mixin box($w: 0, $h: 0) {
-  width: rem($w);
-  height: rem($h);
 }
 @mixin autoMargin($marginX: auto) {
   margin-left: $marginX;
@@ -111,9 +106,9 @@
 }
 
 /* 추가 */
-@mixin box($w, $h) {
-  width: rem($w);
-  height: rem($h);
+@mixin box($w: auto, $h: auto) {
+  width: $w;
+  height: $h;
 }
 
 @mixin font($fs: 16px, $fw: 400, $lh: normal, $cl: black) {
@@ -121,6 +116,15 @@
   font-weight: $fw;
   line-height: $lh;
   color: $cl;
+}
+
+@mixin buttonClear($url, $size: 100%) {
+  border: 0;
+  background-image: url($url);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: $size $size;
+  cursor: pointer;
 }
 
 // Float 해제를 위한 clear 스타일 ---------------------------------------------------- /
