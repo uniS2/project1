@@ -2,8 +2,8 @@
 
 // 내비게이션
 .nav {
-  @include box(rem(1050px), rem(40px));
   @include autoMargin;
+  @include marginY(10px);
   @include pos(relative);
 }
 
@@ -159,9 +159,12 @@
 
 .nav__info {
   font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 16px;
-  border: 1px solid var(--gray-300, #a6a6a6);
+  padding: 6px 16px;
+  border-radius: 18px;
+  border: 1px solid var(--gray-300, #eeeeee);
+  .primary {
+    font-weight: 700;
+  }
 }
 .primary {
   color: $primary-color;
