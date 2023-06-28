@@ -363,6 +363,7 @@ legend {
 // 배치 - 버튼
 .close {
   @include gridbox($column-count: 2, $column-gap: rem(8px));
+  cursor: pointer;
 }
 
 // 모달창 - 버튼 영역
@@ -378,7 +379,7 @@ legend {
     border-radius: rem(3px);
   }
 
-  &__cancle {
+  &__cancel {
     border: 1px solid #898989;
     @include font($fw: 600, $lh: 150%, $cl: $content-color);
   }
