@@ -109,9 +109,9 @@ npm start
 
 ![마켓칼리HTML구조](/src/assets/image/Karly.png)
 
-![header](/src/assets/image/header.png)
-
 #### Header
+
+![header](/src/assets/image/header.png)
 
 - **마크업**
   1. 작업하면서 태그 마다 클래스 속성을 다 써본적 없는데 처음으로 다 클래스를 부여했습니다.<br>
