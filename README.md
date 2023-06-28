@@ -7,6 +7,7 @@
 - [🦁 멋쟁이사자처럼 FE 6기, HTML / CSS 프로젝트(1조: 1희1비)](#-멋쟁이사자처럼-fe-6기-html--css-프로젝트1조-1희1비)
 - [📜 목차](#-목차)
 - [🛍️ 마켓칼리(MarketKarly)](#️-마켓칼리marketkarly)
+- [프로젝트 URL](#프로젝트-url)
 - [🎥 시연영상](#-시연영상)
   - [메인 페이지](#메인-페이지)
   - [로그인 페이지](#로그인-페이지)
@@ -45,6 +46,10 @@
 <img src="https://raw.githubusercontent.com/JuniorTunarr/project1/ab1804e2e0a8eed1fadb2421982683d1164e1edd/src/assets/icons/Logo.svg" width="200px"/>
 </p>
 '마켓칼리' 피그마 시안을 참고하여 만든 HTML + CSS 프로젝트입니다.
+
+# 프로젝트 URL
+
+<a href="https://project1karly.netlify.app/">1조 마켓칼리</a>
 
 # 🎥 시연영상
 
@@ -144,7 +149,41 @@
 - 소셜 미디어 공유를 위해 Open Grap(OG)와 Twitter 카드 지정
 
 ```
+  // OG
 
+  <meta name="format-detection" content="telephone=no" />
+    <meta name="author" content="Projectgroup1" />
+    <meta
+      name="keywords"
+      content="market karly, 마켓칼리, market 칼리, 뷰티칼리, 장보기, 10월의 퍼플위크, 멋사, 멋사 프론트엔드스쿨, 프로젝트 1조 "
+    />
+    <meta name="description" content="마켓칼리 1조" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Market Karly" />
+    <meta
+      property="og:description"
+      content="멋사 프론트엔드 스쿨 6기 프로젝트 1조 마켓칼리 페이지입니다."
+    />
+    <meta
+      property="og:image"
+      content="https://project1karly.netlify.app/assets/icons/logo.png"
+    />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="315" />
+    <meta property="og:url" content="https://project1karly.netlify.app" />
+
+  // twitter
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Market Karly" />
+    <meta
+      name="twitter:description"
+      content="멋사 프론트엔드 스쿨 6기 프로젝트 1조 마켓칼리 페이지입니다."
+    />
+    <meta
+      name="twitter:image"
+      content="https://project1karly.netlify.app/assets/icons/logo.png"
+    />
 ```
 
 # 프로젝트 기간 + 팀원 소개
