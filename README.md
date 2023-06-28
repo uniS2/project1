@@ -1,14 +1,54 @@
-# 📂 MarketKarly
+# 🦁 멋쟁이사자처럼 FE 6기, HTML / CSS 프로젝트(1조: 1희1비)
 
-## 🦁 멋쟁이사자처럼 FE 6기, HTML / CSS 프로젝트(1조: 1희1비)
+---
 
+# 목차
+
+- [마켓칼리(MarketKarly)](#마켓칼리marketkarly)
+- [시연영상](#시연영상)
+  - [메인 페이지](#메인-페이지)
+- [프로젝트 기간 및 팀원 소개](#프로젝트-기간-및-팀원-소개)
+  - [프로젝트 기간](#프로젝트-기간)
+  - [팀원 소개](#팀원-소개)
+- [기술 스택](#기술-스택)
+  - [Front-End](#front-end)
+- [네이밍 컨벤션](#네이밍-컨벤션)
+- [웹 접근성(공통)](#웹-접근성공통)
+- [믹스인(공통)](#믹스인공통)
+- [SEO](#seo)
+- [체크리스트](#체크리스트)
+
+---
+
+# 마켓칼리(MarketKarly)
+
+<p align="left">
+<img src="https://raw.githubusercontent.com/JuniorTunarr/project1/ab1804e2e0a8eed1fadb2421982683d1164e1edd/src/assets/icons/Logo.svg" width="200px"/>
+</p>
 '마켓칼리' 피그마 시안을 참고하여 만든 HTML + CSS 프로젝트입니다.
 
-## 🗓️ 프로젝트 기간 및 팀원 👨🏻‍💻 👩‍💻
+# 시연영상
 
-**2023.06.23 ~ 2023.06.28(약 5일)**
+## 메인 페이지
 
-👨‍👩‍👦‍👦 **Front-End(4명)** : 김봉석, 노치현, 이준석, 정소이
+![main_result](/src/assets/image/result.gif)
+
+## 로그인 페이지
+
+![login_result](/src/assets/image/login.gif)
+
+## 프로젝트 기간 / 팀원 소개
+
+**🗓️ 2023.06.23 ~ 2023.06.28(약 5일)**
+
+👨‍👩‍👦‍👦 **Front-End(4명)** : 김봉석, 노치현, 이준석, 정소이 👨🏻‍💻 👩‍💻
+
+|                          이름                           | 역할 |                           담당                            |
+| :-----------------------------------------------------: | :--: | :-------------------------------------------------------: |
+|    🧐 <a href="https://github.com/NewBsk">김봉석</a>    | 조원 |           (메인) 이벤트 + 배너 + 사이드바 섹션            |
+| 🤓 <a href="https://github.com/JuniorTunarr">노치현</a> | 조장 | 공통 내비게이션 + 공통 푸터 + 로그인 페이지 + README 통합 |
+|                😎 <a href="">이준석</a>                 | 조원 |                         공통 헤더                         |
+|    😃 <a href="https://github.com/uniS2 ">정소이</a>    | 조원 |            (메인) 상품 섹션 + 모달창 + 팝업창             |
 
 ## ⚔️ 기술 스택
 
@@ -23,56 +63,13 @@
 
 <img src="https://img.shields.io/badge/Sass-cc6699?style=for-the-badge&logo=Sass&logoColor=white">
 
-## ⛳️ 역할 담당
-
-<details>
-    <summary>🧐 김봉석</summary>
-    <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-
-        * (조원) 이벤트 + 배너 + 사이드바 섹션
-
-  </details>
-<details>
-    <summary>🤓 노치현</summary>
-    <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-
-        * (조장) 공통 내비게이션 + 공통 푸터 + 로그인 페이지 + README.md 통합
-
-  </details>
-<details>
-    <summary>😎 이준석</summary>
-
-        * (조원) 공통 헤더
-
-  </details>
-  <details>
-    <summary>😃 정소이</summary>
-
-        * (조원) 상품 섹션 + 모달창 + 팝업창
-
-  </details>
-
-## 💻 실행 방법
-
-### 클론 후, 패키지 설치
-
-```
-npm i
-```
-
-### Live Server 실행 및 Sass Watch 모드
-
-```
-npm start
-```
-
-### ✏️ 네이밍 컨벤션
+## ✏️ 네이밍 컨벤션
 
 - **BEM 패턴**
   - 자식요소: \_\_ => event\_\_title
   - 상태: -- => button--active
 
-### 🚫 웹 접근성(공통)
+## 🚫 웹 접근성(공통)
 
 - **마크업**
 
@@ -86,24 +83,24 @@ npm start
 
   - a태그 내 target=”\_blank”지정시 rel=”noreferrer noopener” 속성 부여
 
-### 🌈 믹스인(공통)
+## 🌈 믹스인(공통)
 
-### ✨ SEO
+## ✨ SEO
 
-#### ✅ 체크리스트
+## ✅ 체크리스트
 
 - [x] 문법에 맞는 HTML 작성하기
 - [x] 구체적인 페이지 제목 만들기
-- [ ] 메타 태그 활용하기
+- [x] 메타 태그 활용하기
 - [x] 이미지에 alt 속성 기재
 - [x] 이미지 맵에 중요한 링크 사용 피하기
 - [x] 플래시 전용 페이지 피하기
-- [ ] anchor 태그를 활용한 적절한 키워드 배치
+- [x] anchor 태그를 활용한 적절한 키워드 배치
 - [ ] 여러 개의 페이지로 나누어진 콘텐츠 검색 최적화 – 시리즈/연재
 - [ ] 모든 페이지가 유입 페이지가 되도록 사이트 구성
 - [ ] HTTPS 사용 권장
 
-## 📜 페이지(섹션) 설명
+# 📜 페이지(섹션) 설명
 
 ### 메인 페이지
 
@@ -622,12 +619,16 @@ document.querySelectorAll("input").forEach((input) => {
 
   2. 오류 메시지: 최초에 display: none으로 숨겨둔 오류메시지가 .is--invalid 클래스가 적용되었을 때, 나타나게끔 하였습니다.
 
-## ⭐️ 결과물
+## 💻 실행 방법
 
-### 메인 페이지
+### 클론 후, 패키지 설치
 
-![main_result](/src/assets/image/result.gif)
+```
+npm install
+```
 
-### 로그인 페이지
+### Live Server 실행 및 Sass Watch 모드
 
-![login_result](/src/assets/image/login.gif)
+```
+npm start or npm run start
+```
