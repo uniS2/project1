@@ -1,1 +1,118 @@
-// navigation.scss
+@use "./../utils/" as *;
+
+// 내비게이션
+.nav {
+  @include autoMargin;
+  @include pos(sticky);
+  @include box($h: rem(56px));
+  @include font($lh: 200%);
+  min-width: rem(1050px);
+  max-width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  margin-top: rem(10px);
+  vertical-align: middle;
+  background-color: $white;
+  box-shadow: 0 1px 2px -1px gray;
+  &__container {
+    @include box(rem(1050px), rem(50px));
+    @include autoMargin;
+    @include flexbox(row, space-between, center, nowrap);
+    @include paddingY(rem(16px));
+    @include font($lh: rem(16px));
+  }
+  &__category {
+    @include box($w: rem(84px));
+    @include flexbox($gap: rem(10px));
+    @include po;
+    &__list {
+      @include flexbox(column, nowrap);
+      @include pos(absolute, rem(32px));
+      @include box($h: rem(520px));
+      margin-top: rem(8px);
+      display: none;
+      overflow: auto;
+      z-index: 999;
+    }
+    &:hover .nav__category__image {
+      filter: invert(13%) sepia(17%) saturate(7280%) hue-rotate(266deg)
+        brightness(143%) contrast(145%);
+    }
+    &:hover &__text {
+      @include font($fw: 700, $lh: 150%, $cl: $primary-color);
+    }
+    &:hover &__list {
+      display: block;
+      background: white;
+      border: rem(2px) solid #f7f7f7;
+    }
+    &:hover .category__item {
+      @include box($w: rem(247px));
+      @include flexbox($direction: column);
+      &:hover {
+        .category__link {
+          @include font($fw: 700, $cl: $primary-color);
+        }
+        background-color: #f7f7f7;
+      }
+    }
+    &__image {
+      @include box(rem(16px), rem(14px));
+      @include pos(absolute, rem(5px), 0, 0, 0);
+    }
+    &__text {
+      margin-left: rem(25px);
+      @include font(rem(16px), 600, 150%, $cl: $content-color);
+    }
+  }
+  &__collection {
+    &__list {
+      @include flexbox(row, center, center, nowrap);
+    }
+  }
+  &__info {
+    padding: rem(6px) rem(16px);
+    border-radius: rem(18px);
+    @include font($fs: rem(12px));
+    border: rem(1px) solid #eeeeee;
+    .primary {
+      @include font($fs: rem(12px), $fw: 500);
+    }
+  }
+  .category {
+    &__link {
+      @include font($cl: $content-color);
+      display: block;
+    }
+  }
+  .collection {
+    &__item {
+      @include box($w: rem(150px));
+      text-align: center;
+      &:hover .collection__link {
+        text-decoration: underline $primary-color;
+        @include font($fw: 600, $cl: $primary-color);
+      }
+    }
+    &__link {
+      @include font($fw: 600, $cl: $content-color);
+    }
+  }
+  .sprite {
+    background: url(./../../assets/icons/MenuIcon.svg) no-repeat;
+    background-size: 40%;
+    padding: rem(12px) 0 rem(8px) rem(45px);
+    @include box(rem(247px), rem(40px));
+  }
+  $total-sprites: 22;
+  $sprite-height: 41px;
+  @for $i from 1 through $total-sprites {
+    .sprite#{$i} {
+      background-position: 0 ($i - 1) * -$sprite-height;
+    }
+  }
+  .primary {
+    color: $primary-color;
+  }
+}

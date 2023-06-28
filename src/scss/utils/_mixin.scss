@@ -1,1 +1,137 @@
-// mixin.scss
+@use "./../utils/unit" as *;
+
+// padding 관련 믹스인
+@mixin paddingY($paddingY) {
+  padding-top: $paddingY;
+  padding-bottom: $paddingY;
+}
+
+@mixin paddingX($paddingX: 0) {
+  padding-left: $paddingX;
+  padding-right: $paddingX;
+}
+
+@mixin padding($padding: 0) {
+  padding-left: $padding;
+  padding-right: $padding;
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+// margin 관련 믹스인
+@mixin marginY($marginY: 0) {
+  margin-top: $marginY;
+  margin-bottom: $marginY;
+}
+
+@mixin marginX($marginX: 0) {
+  margin-left: $marginX;
+  margin-right: $marginX;
+}
+
+@mixin margin($margin: 0) {
+  margin-left: $margin;
+  margin-right: $margin;
+  margin-top: $margin;
+  margin-bottom: $margin;
+}
+@mixin autoMargin($marginX: auto) {
+  margin-left: $marginX;
+  margin-right: $marginX;
+}
+
+@mixin font($fs: 16px, $fw: 400, $lh: normal, $cl: black) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  color: $cl;
+}
+// Position 관련 믹스인
+@mixin po($po: relative) {
+  position: $po;
+}
+@mixin pos($pos: absolute, $t: initial, $r: initial, $b: initial, $l: initial) {
+  position: $pos;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+@mixin posCenterX($pos: absolute) {
+  @include pos;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin posCenterY() {
+  @include pos;
+  top: 50%;
+  transform: translateY(-50%);
+}
+@mixin posCenter($pos: absolute) {
+  @include pos;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 박스(컨테이너) 크기를 뷰포트 영역으로 확장시키는 믹스인
+@mixin boxSizeFull {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  margin-right: initial;
+}
+
+// 박스의 최소 및 최대 너비를 설정하기 위한 믹스인
+@mixin boxSizeMinMax($min: 768px, $max: 1200px) {
+  min-width: $min;
+  max-width: $max;
+  @include autoMargin;
+}
+
+// 그리드 믹스인
+@mixin gridbox($column-count: 12, $column-gap: 16px, $row-gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($column-count, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: $column-gap;
+  grid-row-gap: $row-gap;
+}
+
+@mixin textEllipis() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 추가 */
+@mixin box($w: auto, $h: auto) {
+  width: $w;
+  height: $h;
+}
+
+@mixin font($fs: 16px, $fw: 400, $lh: normal, $cl: black) {
+  font-size: $fs;
+  font-weight: $fw;
+  line-height: $lh;
+  color: $cl;
+}
+
+@mixin buttonClear($url, $size: 100%) {
+  border: 0;
+  background-image: url($url);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: $size $size;
+  cursor: pointer;
+}
+
+// Float 해제를 위한 clear 스타일 ---------------------------------------------------- /
+@mixin clearFix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

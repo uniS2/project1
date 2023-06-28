@@ -1,1 +1,54 @@
-// button.scss
+@use "./../utils/unit" as *;
+@use "./../utils/mixin" as *;
+
+
+.button {
+
+  // 에이전트 스타일 초기화
+  &__cart,
+  &__next,
+  &__add,
+  &__reduce {
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  // 장바구니, 상품 품목 넘김 버튼
+  &__cart,
+  &__next {
+    // 배치
+    z-index: 1;
+    border-radius: 50%;
+    // overflow: hidden;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 rem(3px) rgba(0, 0, 0, 1);
+    }
+  }
+
+  // focus에 맞게 이미지 크기 조절
+  &__cart {
+    @include pos($r: rem(15px), $t: rem(258px));
+    background: url(./../assets/icons/Cart.svg) center /110% 110% no-repeat;
+    @include box(45px, 45px);
+  }
+
+  &__next {
+    @include pos($r: rem(-29px), $t: rem(211px));
+    @include box(60px, 60px);
+    background: url(./../assets/icons/arrow2_1.svg) center /120% 120% no-repeat;
+
+    &:hover {
+      box-shadow: 0 0 rem(6px) rem(1px) rgba(0, 0, 0, 0.1)
+    }
+  }
+
+  // 장바구니 수량 버튼
+  &__add,
+  &__reduce {
+    @include box(rem(30px), rem(30px));
+  }
+}
