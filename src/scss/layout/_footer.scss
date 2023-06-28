@@ -20,7 +20,7 @@
     &__nonMember {
       vertical-align: top;
       @include flexbox(column, nowrap);
-      @include font($fs: rem(12px), $lh: 160%);
+      @include font($fs: rem(12px), $lh: 160%, $cl: $content-color);
     }
   }
   &__about {
@@ -33,7 +33,7 @@
   }
   &__companyInfo {
     @include flexbox(column, nowrap);
-    @include font($fs: rem(12px), $lh: 160%, $cl: inherit);
+    @include font($fs: rem(12px), $lh: 160%, $cl: $content-color);
   }
   &__sns {
     &List {
@@ -78,11 +78,11 @@
   .cs {
     &__info {
       &Number {
-        @include font(rem(37px), 700, 140%, inherit);
+        @include font(rem(37px), 700, 140%, $cl: $content-color);
       }
       &Time {
         margin-left: rem(8px);
-        @include font(rem(16px), 600, 150%, inherit);
+        @include font(rem(16px), 600, 150%, $cl: $content-color);
       }
     }
     &__inquiry {
@@ -92,7 +92,7 @@
         @include flexbox($gap: rem(16px));
       }
       &__button {
-        border: 1px solid var(--gray-200, #c4c4c4);
+        border: 1px solid #c4c4c4;
         background: white;
         @include box(rem(140px), rem(40px));
         @include padding(rem(4px));
@@ -101,11 +101,15 @@
         margin-top: -3px;
         vertical-align: top;
         @include flexbox(column, nowrap);
-        @include font($lh: 160%);
+        @include font($lh: 160%, $cl: $content-color);
       }
     }
   }
-
+  .about {
+    &__link {
+      @include font($lh: 160%, $cl: $content-color);
+    }
+  }
   .mark {
     &__description {
       display: block;

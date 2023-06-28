@@ -11,6 +11,7 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.7/dist/web/static/pretendard-dynamic-subset.css"
     />
     <link rel="stylesheet" href="./style/login.css" />
+    <script defer src="./index.js"></script>
   </head>
 
   <body>
@@ -19,15 +20,17 @@
       <div class="header__group clearfix">
         <div class="header__group__tab">
           <h1 class="group__logo">
-            <img
-              class="group__logo_img"
-              src="/assets/icons/Logo.svg"
-              alt="마켓칼리 로고"
-            />
+            <a href="/">
+              <img
+                class="group__logo_img"
+                src="/assets/icons/Logo.svg"
+                alt="마켓칼리 로고"
+              />
+            </a>
           </h1>
           <ul class="group__itemBox">
             <li class="group__itemBox__item">
-              <a class="itemBox__link itemBox__link--active" href="#"
+              <a class="itemBox__link itemBox__link--active" href="/"
                 >마켓칼리</a
               >
             </li>
@@ -401,15 +404,13 @@
               src="/assets/icons/footer1.svg"
               alt="정보보호 관리체계 인증마크"
             />
-            <div class="mark__descriptionWrapper">
-              <span class="mark__description">
+            <span class="mark__description">
+              <span>
                 [인증범위] 마켓칼리 쇼핑몰 서비스 개발 운영(심사받지 않은 물리적
                 인프라 제외)
               </span>
-              <span class="mark__description">
-                [유효기간] 2022.01.19 ~ 2025.01.18
-              </span>
-            </div>
+              <span> [유효기간] 2022.01.19 ~ 2025.01.18 </span>
+            </span>
           </button>
           <button type="button" class="footer__mark__button">
             <img
@@ -417,12 +418,10 @@
               src="/assets/icons/footer2.svg"
               alt="개인정보처리시스템 인증마크"
             />
-            <div class="mark__descriptionWrapper">
-              <span class="mark__description">개인정보보호 우수 웹사이트</span>
-              <span class="mark__description">
-                개인정보처리시스템 인증 (ePRIVACY PLUS)
-              </span>
-            </div>
+            <span class="mark__description">
+              <span>개인정보보호 우수 웹사이트</span>
+              <span> 개인정보처리시스템 인증 (ePRIVACY PLUS) </span>
+            </span>
           </button>
           <button type="button" class="footer__mark__button">
             <img
@@ -430,11 +429,9 @@
               src="/assets/icons/footer3.svg"
               alt="토스페이먼츠 구매안전 인증서"
             />
-            <div class="mark__descriptionWrapper">
-              <span class="mark__description">
-                토스페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.
-              </span>
-            </div>
+            <span class="mark__description">
+              토스페이먼츠 구매안전(에스크로) 서비스를 이용하실 수 있습니다.
+            </span>
           </button>
           <button type="button" class="footer__mark__button">
             <img
@@ -442,14 +439,10 @@
               src="/assets/icons/footer4.svg"
               alt="우리은행 안전거래 인증서"
             />
-            <div class="mark__descriptionWrapper">
-              <span class="mark__description">
-                <span
-                  >고객님이 현금으로 결제한 금액에 대해 우리은행과 채무지급보증
-                  계약을 체결하여 안전거래를 보장하고 있습니다.</span
-                >
-              </span>
-            </div>
+            <span class="mark__description"
+              >고객님이 현금으로 결제한 금액에 대해 우리은행과 채무지급보증
+              계약을 체결하여 안전거래를 보장하고 있습니다.</span
+            >
           </button>
         </div>
       </div>
@@ -468,6 +461,5 @@
         </em>
       </div>
     </footer>
-    <script src="./js/form__validation.js"></script>
   </body>
 </html>
