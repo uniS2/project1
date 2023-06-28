@@ -638,7 +638,7 @@ legend {
   max-width: 100%;
   top: 0;
   right: 0;
-  z-index: 5;
+  z-index: 3;
   margin-top: 0.625rem;
   vertical-align: middle;
   background-color: #ffffff;
@@ -1554,7 +1554,7 @@ legend {
   left: initial;
   width: 5.5rem;
   height: auto;
-  border: 0.0625rem solid #C4C4C4;
+  border: 0.0625rem solid #c4c4c4;
   border-radius: 0.1875rem;
   display: flex;
   flex-flow: row nowrap;
@@ -1650,7 +1650,7 @@ legend {
   color: #ffffff;
 }
 .button__reduce {
-  color: #A6A6A6;
+  color: #a6a6a6;
 }
 
 .popup {
@@ -1663,7 +1663,7 @@ legend {
   right: initial;
   bottom: initial;
   left: 40%;
-  z-index: 2;
+  z-index: 5;
   width: 19.25rem;
   height: 29.4rem;
   border-radius: 1rem;
@@ -1710,7 +1710,7 @@ legend {
   height: 3.8125rem;
   padding-left: 0.35rem;
   padding-right: 0.35rem;
-  border-right: 0.04375rem solid #E1E1E1;
+  border-right: 0.04375rem solid #e1e1e1;
 }
 .button__close {
   padding-left: 0;

@@ -112,7 +112,6 @@ legend {
   @include box(2.5rem, 3.21285rem);
 }
 
-
 .mention {
   @include pos($t: 0);
   @include box($w: 100%);
@@ -195,7 +194,12 @@ legend {
       // 스타일링
       margin-top: rem(8px);
       padding-bottom: rem(24px);
-      @include font($fs: rem(21.328px), $fw: 600, $lh: 150%, $cl: $content-color);
+      @include font(
+        $fs: rem(21.328px),
+        $fw: 600,
+        $lh: 150%,
+        $cl: $content-color
+      );
     }
   }
 
@@ -205,7 +209,12 @@ legend {
       // 스타일링
       @include flexbox($gap: rem(80px));
       @include marginY(rem(8px));
-      @include font($fs: rem(21.328px), $fw: 600, $lh: 150%, $cl: $content-color);
+      @include font(
+        $fs: rem(21.328px),
+        $fw: 600,
+        $lh: 150%,
+        $cl: $content-color
+      );
 
       .goods__disRate {
         color: $accent-yellow;
@@ -243,10 +252,8 @@ legend {
   }
 }
 
-
 // 모달창
 .modal {
-
   // 딤드 배경
   &__background {
     @include pos($pos: fixed, $t: 0, $l: 0);
@@ -267,11 +274,11 @@ legend {
 .show {
   opacity: 1;
   z-index: 1;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 
   // 모달-장바구니창
   .modal__cart {
-    transition: translate(-50%, -50%) all .5s;
+    transition: translate(-50%, -50%) all 0.5s;
   }
 }
 
@@ -284,14 +291,13 @@ legend {
 
 // 모달창 내부 배치
 .modal {
-
   &__cart {
     background: $base-bg;
     @include box(rem(397px), rem(292px));
     @include paddingX(rem(20px));
     @include paddingY(rem(24px));
     border-radius: rem(16px);
-    box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.20);
+    box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.2);
     font-weight: 600;
     // 내부배치
     @include flexbox($direction: column, $gap: rem(28px));
@@ -307,7 +313,7 @@ legend {
 .count__container {
   @include pos($b: 0, $r: 0);
   @include box(rem(88px));
-  border: rem(1px) solid #C4C4C4;
+  border: rem(1px) solid #c4c4c4;
   border-radius: rem(3px);
   @include flexbox($items: center, $gap: rem(8px));
 }
@@ -361,7 +367,6 @@ legend {
 
 // 모달창 - 버튼 영역
 .button {
-
   &__cancle,
   &__addCart {
     // 에이전트 스타일 초기화
@@ -384,10 +389,9 @@ legend {
   }
 
   &__reduce {
-    color: #A6A6A6;
+    color: #a6a6a6;
   }
 }
-
 
 // 팝업창
 
@@ -397,17 +401,16 @@ legend {
   &__container {
     overflow: hidden;
     @include pos(fixed, $t: 30%, $l: 40%);
-    z-index: 2;
+    z-index: 5;
     @include box(rem(308px), rem(470.4px));
     // 설정
     border-radius: rem(16px);
     background: $base-bg;
-    box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.20);
+    box-shadow: 0 rem(8px) rem(36px) 0 rgba(0, 0, 0, 0.2);
 
     form {
-      @include flexbox()
+      @include flexbox();
     }
-
   }
 
   &__img {
@@ -424,7 +427,6 @@ legend {
 }
 
 .button {
-
   &__closeToday,
   &__close {
     @include font($cl: $content-color);
@@ -438,7 +440,7 @@ legend {
   &__closeToday {
     @include box(rem(151.2px), rem(61px));
     @include paddingX(rem(5.6px));
-    border-right: rem(0.7px) solid #E1E1E1;
+    border-right: rem(0.7px) solid #e1e1e1;
   }
 
   &__close {
