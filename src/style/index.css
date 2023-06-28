@@ -1059,7 +1059,7 @@ legend {
   gap: 0;
 }
 .footer #blogLink {
-  background-image: url("./../../assets/icons/Blog.svg");
+  background-image: url("/src/assets/icons/");
 }
 .footer #facebookLink {
   background-image: url("./../../assets/icons/FaceBook.svg");
