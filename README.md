@@ -885,6 +885,7 @@ footer.footer
 <p align="center">
 <img src="/src/assets/image/karly_popup.png" width="200px"/>
 </p>
+
 ```
 div.popup
 └─ dialog.class="popup__container"[autofocus][open]
