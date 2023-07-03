@@ -87,7 +87,11 @@ legend {
   }
   &__container {
     @include box(5rem, 13.9375rem);
+<<<<<<< HEAD
     @include pos($pos: fixed, $t: 30%, $r: rem(39.04px));
+=======
+    @include pos($pos: fixed, $t: 50%, $r: rem(39.04px));
+>>>>>>> 9f71238e134ee3e67abe2641493690019c1dd230
     @include flexbox($direction: column, $items: center);
     border: 1px solid #c4c4c4;
     padding: 0.5rem;
@@ -363,6 +367,10 @@ legend {
 // 배치 - 버튼
 .close {
   @include gridbox($column-count: 2, $column-gap: rem(8px));
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> 9f71238e134ee3e67abe2641493690019c1dd230
 }
 
 // 모달창 - 버튼 영역
@@ -378,7 +386,11 @@ legend {
     border-radius: rem(3px);
   }
 
+<<<<<<< HEAD
   &__cancle {
+=======
+  &__cancel {
+>>>>>>> 9f71238e134ee3e67abe2641493690019c1dd230
     border: 1px solid #898989;
     @include font($fw: 600, $lh: 150%, $cl: $content-color);
   }
